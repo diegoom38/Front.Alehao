@@ -1,0 +1,11 @@
+<div
+  class="bg-white rounded-2xl border shadow-sm transition w-full"
+  [ngClass]="{
+    'hover:shadow-md cursor-pointer': hover,
+    'p-6': padding,
+    'border-slate-200': !borderColor
+  }"
+  [class]="borderColor"
+>
+  <ng-content></ng-content>
+</div>

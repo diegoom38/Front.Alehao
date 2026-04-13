@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+  /* --- Cores Originais (Brand) --- */
+  --color-primary: #4A90E2;
+  --color-primary-hover: #3A78C2;
+  --color-secondary: #F8C978;
+  --color-secondary-hover: #eeb656;
+  --color-white: #ffffff;
+  --color-off-white: #f9f9f9;
+
+  /* --- Novas Variáveis para Sidebar Dark (Pro) --- */
+  --sidebar-bg: #0f172a;           /* Slate 900 */
+  --sidebar-bg-hover: #1e293b;     /* Slate 800 */
+  --sidebar-item-active: rgba(255, 255, 255, 0.1);
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-text: #94a3b8;         /* Slate 400 */
+  --sidebar-text-active: #ffffff;
+  
+  /* --- Acento para o Logo e Botões --- */
+  --accent-blue: #3b82f6;          /* Blue 500 */
+  --accent-blue-glow: rgba(59, 130, 246, 0.2);
+}
+
+/* Opcional: Ajuste para garantir que o scrollbar da sidebar não fique feio no dark */
+aside::-webkit-scrollbar {
+  width: 4px;
+}
+
+aside::-webkit-scrollbar-thumb {
+  background: var(--sidebar-border);
+  border-radius: 10px;
+}

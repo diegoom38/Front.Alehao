@@ -1,0 +1,161 @@
+<form [formGroup]="reportForm" class="min-h-screen bg-[#F0F7FF] font-sans antialiased">
+
+  <!-- HEADER -->
+  <div class="bg-white shadow-md p-5 mb-6 border-b-4 border-[var(--color-primary)]">
+    <div class="container mx-auto max-w-auto flex items-center gap-4">
+      <div class="bg-[var(--color-secondary)] p-2 rounded-full shadow-sm">
+        <span class="text-2xl">🐾</span>
+      </div>
+      <div>
+        <h1 class="text-3xl font-extrabold text-[var(--color-primary)]">
+          Denúncia Rápida
+        </h1>
+        <p class="text-sm text-gray-500 mt-1 italic">
+          Sua ação salva uma vida. Tudo rápido e fácil com a <strong>Alehao</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== PASSO 1 ===================== -->
+  @if (step() === 1) {
+  <div class="container mx-auto p-4 max-w-3xl bg-white rounded-2xl shadow-xl border border-blue-50"
+    formGroupName="location">
+    <div class="flex items-center gap-2 mb-6 border-b pb-2">
+      <span
+        class="bg-[var(--color-primary)] text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">1</span>
+      <h2 class="text-2xl font-semibold text-gray-700">Localização</h2>
+    </div>
+
+    <section class="map-section mb-6">
+      <div
+        class="w-full h-[40vh] bg-blue-50 rounded-lg shadow-inner flex items-center justify-center border-2 border-dashed border-[var(--color-primary)]/30">
+        <div id="map" class="w-full h-full text-[var(--color-primary)] flex items-center justify-center font-medium">
+          Mapa Carregando...
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-6">
+      <label class="block text-sm font-medium text-gray-700 mb-8 border-b-2 border-[var(--color-primary)]/30 pb-2">
+        Ou informe o endereço manualmente:
+      </label>
+
+      <app-input label="Endereço" placeholder="Ex: Av. Rio Branco, 500" formControlName="address"></app-input>
+
+      @if (locationForm.get('address')?.touched && locationForm.get('address')?.invalid) {
+      <p class="text-red-500 text-xs mt-1">
+        Endereço muito curto
+      </p>
+      }
+    </section>
+
+    <app-button label="Próximo Passo" type="primary" [fullWidth]="true" (click)="changeStep(2)"></app-button>
+  </div>
+  }
+
+  <!-- ===================== PASSO 2 ===================== -->
+  @if (step() === 2) {
+  <div class="container mx-auto p-4 max-w-3xl bg-white rounded-2xl shadow-xl mt-6 border border-blue-50"
+    formGroupName="occurrence">
+    <div class="flex items-center gap-2 mb-6 border-b pb-2">
+      <span
+        class="bg-[var(--color-primary)] text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">2</span>
+      <h2 class="text-2xl font-semibold text-gray-700">Detalhes da Ocorrência</h2>
+    </div>
+
+    <div class="space-y-6">
+      <div>
+        <app-select [options]="whatsHappeningOptions()" formControlName="type" label="O que está acontecendo?">
+        </app-select>
+
+        @if (occurrenceForm.get('type')?.touched && occurrenceForm.get('type')?.invalid) {
+        <p class="text-red-500 text-xs mt-1">Campo obrigatório</p>
+        }
+      </div>
+
+      <div>
+        <app-textarea label="Descrição da situação" placeholder="Descreva brevemente o que você viu..."
+          formControlName="description" />
+
+        @if (occurrenceForm.get('description')?.touched && occurrenceForm.get('description')?.invalid) {
+        <p class="text-red-500 text-xs mt-1">
+          Mínimo de 10 caracteres
+        </p>
+        }
+      </div>
+
+      <div>
+        <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">
+          Fotos ou Vídeos
+        </label>
+
+        <label
+          class="flex flex-col items-center justify-center w-full h-32 border-2 border-[var(--color-primary)] border-dashed rounded-lg cursor-pointer bg-blue-50/50 hover:bg-blue-100/50 transition">
+          <span class="text-sm text-gray-600 font-medium">Adicionar Mídia</span>
+          <input type="file" class="hidden" multiple (change)="onFileSelected($event)" />
+        </label>
+
+        @if (mediaFiles.length > 0) {
+        <p class="text-xs text-gray-500 mt-2">
+          {{ mediaFiles.length }} arquivo(s) adicionados
+        </p>
+        }
+      </div>
+    </div>
+
+    <div class="flex gap-3 mt-8">
+      <app-button class="w-1/3" label="Voltar" type="secondary" [fullWidth]="true" (click)="backStep()"></app-button>
+      <app-button class="w-2/3" label="Continuar" type="primary" [fullWidth]="true" (click)="changeStep(3)">
+      </app-button>
+    </div>
+  </div>
+  }
+
+  <!-- ===================== PASSO 3 ===================== -->
+  @if (step() === 3) {
+  <div class="container mx-auto p-4 max-w-3xl bg-white rounded-2xl shadow-xl mt-6 mb-12 border border-blue-50"
+    formGroupName="identification">
+    <div class="flex items-center gap-2 mb-6 border-b pb-2">
+      <span
+        class="bg-[var(--color-primary)] text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">3</span>
+      <h2 class="text-2xl font-semibold text-gray-700">Identificação</h2>
+    </div>
+
+    <div
+      class="bg-yellow-50 border border-[var(--color-secondary)] p-4 rounded-xl mb-6 flex items-center justify-between">
+      <div>
+        <h3 class="font-bold text-gray-800 flex items-center gap-2">
+          🛡️ Denúncia Anônima?
+        </h3>
+        <p class="text-xs text-gray-600">
+          Sua identidade será protegida.
+        </p>
+      </div>
+
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="anonimo-check" class="sr-only peer" formControlName="anonymous">
+        <div
+          class="w-11 h-6 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#F8C978]">
+        </div>
+      </label>
+    </div>
+
+    @if (!identificationForm.get('anonymous')?.value) {
+    <div class="flex flex-col gap-6">
+      <app-input label="Nome Completo" placeholder="Nome completo" formControlName="name"></app-input>
+      <app-input label="E-mail" placeholder="E-mail" type="email" formControlName="email"></app-input>
+      <app-input label="Telefone" placeholder="WhatsApp" type="tel" formControlName="phone"></app-input>
+    </div>
+    }
+
+
+    <div class="flex gap-3 mt-8">
+      <app-button class="w-1/3" label="Voltar" type="secondary" [fullWidth]="true" (click)="backStep()"></app-button>
+      <app-button class="w-2/3" label="Finalizar Denúncia" type="success" [fullWidth]="true" (click)="submitReport()">
+      </app-button>
+    </div>
+  </div>
+  }
+
+</form>
