@@ -1,0 +1,145 @@
+<app-base-card>
+  <main class="grid gap-4">
+    <div class="flex flex-col lg:flex-row lg:items-center md:justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center border border-slate-200">
+          <span class="material-symbols-outlined text-blue-600 text-3xl">pets</span>
+        </div>
+        <div>
+          <p class="text-xs text-slate-400 uppercase tracking-wide font-bold">Protocolo de Adoção</p>
+          <h2 class="text-2xl font-bold text-slate-900">Pipoca <span
+              class="text-slate-400 font-light text-lg">#PET-2031</span></h2>
+          <p class="text-sm text-slate-500 italic">Resgatado em 02/04/2026 • São Paulo - SP</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 items-center">
+        <div class="flex items-center gap-3 px-4 py-2 bg-white rounded-xl border border-slate-200 mr-2">
+          <span class="text-sm font-medium text-slate-600">Vitrine Pública:</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" checked>
+            <div
+              class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600">
+            </div>
+          </label>
+          <span class="text-xs font-bold text-blue-600 uppercase">Ativo</span>
+        </div>
+
+        <app-button label="Visualizar no Portal" type="secondary"></app-button>
+        <app-button label="Salvar Alterações"></app-button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <div class="lg:col-span-2 flex flex-col gap-4">
+
+        <app-base-card>
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-semibold flex items-center gap-2">
+              <span class="material-symbols-outlined text-blue-600">edit_note</span>
+              Descrição da PDP (Portal do Anjo)
+            </h3>
+            <span class="text-[10px] bg-slate-100 px-2 py-1 rounded font-bold text-slate-500 uppercase italic">Suporta
+              HTML / CDK Editor</span>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+            <div class="bg-slate-50 border-b border-slate-200 p-2 flex gap-2">
+              <button class="p-1 hover:bg-white rounded border border-transparent hover:border-slate-200"><span
+                  class="material-symbols-outlined text-sm">format_bold</span></button>
+              <button class="p-1 hover:bg-white rounded border border-transparent hover:border-slate-200"><span
+                  class="material-symbols-outlined text-sm">format_italic</span></button>
+              <button class="p-1 hover:bg-white rounded border border-transparent hover:border-slate-200"><span
+                  class="material-symbols-outlined text-sm">format_list_bulleted</span></button>
+              <div class="w-[1px] h-4 bg-slate-300 mx-1 self-center"></div>
+              <button class="p-1 hover:bg-white rounded border border-transparent hover:border-slate-200"><span
+                  class="material-symbols-outlined text-sm">link</span></button>
+            </div>
+            <textarea class="w-full p-4 text-sm text-slate-600 focus:outline-none min-h-[250px] leading-relaxed"
+              placeholder="Escreva aqui a história do animal, temperamento e cuidados necessários para atrair adotantes...">
+Pipoca é um cãozinho extremamente dócil, resgatado após ser encontrado em uma rodovia. Ele adora crianças e já está vacinado. Sua energia é moderada, sendo um excelente companheiro para apartamentos ou casas.
+            </textarea>
+          </div>
+        </app-base-card>
+
+        <app-base-card>
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-semibold">Galeria de Vitrine</h3>
+            <app-button label="Adicionar Fotos" type="secondary" size="sm"></app-button>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div
+              class="aspect-square bg-slate-100 rounded-xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center text-slate-400 gap-2 hover:bg-slate-50 transition-colors cursor-pointer">
+              <span class="material-symbols-outlined">add_a_photo</span>
+              <span class="text-[10px] font-bold uppercase">Capa</span>
+            </div>
+            <div class="relative aspect-square rounded-xl bg-slate-200 overflow-hidden group">
+              <div class="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button class="p-1 bg-red-500 text-white rounded shadow-sm"><span
+                    class="material-symbols-outlined text-xs">delete</span></button>
+              </div>
+              <div class="w-full h-full flex items-center justify-center text-slate-400">
+                <span class="material-symbols-outlined text-4xl">image</span>
+              </div>
+            </div>
+          </div>
+        </app-base-card>
+      </div>
+
+      <aside class="flex flex-col gap-4">
+
+        <app-base-card class="bg-blue-600 text-white border-none shadow-lg shadow-blue-200">
+          <h3 class="text-sm opacity-80 mb-1">Situação do Processo</h3>
+          <p class="text-xl font-bold">Pronto para Adoção</p>
+          <div class="mt-4 pt-4 border-t border-white/20">
+            <div class="flex justify-between text-xs font-medium">
+              <span>Saúde/Checkup</span>
+              <span>100%</span>
+            </div>
+            <div class="w-full bg-white/20 h-1.5 rounded-full mt-1">
+              <div class="bg-white h-full rounded-full w-[100%] shadow-[0_0_8px_rgba(255,255,255,0.8)]"></div>
+            </div>
+          </div>
+        </app-base-card>
+
+        <app-base-card>
+          <h3 class="text-sm text-slate-500 mb-4 font-bold uppercase tracking-widest">Informações Base</h3>
+          <div class="space-y-4">
+            <div>
+              <label class="text-[10px] font-bold text-slate-400 uppercase">Espécie / Raça</label>
+              <p class="text-sm font-semibold text-slate-800 tracking-tight">Cão • Vira-lata (SRD)</p>
+            </div>
+            <div>
+              <label class="text-[10px] font-bold text-slate-400 uppercase">Idade Estimada</label>
+              <p class="text-sm font-semibold text-slate-800 tracking-tight">2 Anos (Adulto)</p>
+            </div>
+            <div>
+              <label class="text-[10px] font-bold text-slate-400 uppercase">Porte / Peso</label>
+              <p class="text-sm font-semibold text-slate-800 tracking-tight">Médio • 14kg</p>
+            </div>
+          </div>
+        </app-base-card>
+
+        <app-base-card>
+          <h3 class="text-sm text-slate-500 mb-3 font-bold uppercase">Gestão do Animal</h3>
+          <div class="grid gap-2">
+            <app-button label="Marcar como Adotado" [fullWidth]="true" type="success"></app-button>
+          </div>
+        </app-base-card>
+
+        <app-base-card>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+              <span class="material-symbols-outlined text-slate-400">house</span>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-800 tracking-tight">Abrigo São Francisco</h4>
+              <p class="text-[11px] text-slate-500">Operador: João Silva</p>
+            </div>
+          </div>
+        </app-base-card>
+      </aside>
+    </div>
+  </main>
+</app-base-card>

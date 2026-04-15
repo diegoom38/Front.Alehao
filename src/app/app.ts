@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, OnInit, signal, ViewContainerRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ModalService } from './shared/services/modal';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,12 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('Front.Alehao');
+  private vcr = inject(ViewContainerRef);
+  private modalService = inject(ModalService);
+
+  ngOnInit() {
+    this.modalService.setRootViewContainerRef(this.vcr);
+  }
 }

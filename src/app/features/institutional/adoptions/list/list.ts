@@ -4,14 +4,13 @@ import {
   SelectOption,
 } from '../../../../shared/components/select/select.component';
 import { InputComponent } from '../../../../shared/components/input/input.component';
-import { RouterLink } from "@angular/router";
 import { BaseCard } from "../../../../shared/components/base-card/base-card";
 import { Tag } from "../../../../shared/components/tag/tag";
 import { Paginator } from "../../../../shared/components/paginator/paginator";
 
 @Component({
   selector: 'app-list',
-  imports: [SelectComponent, InputComponent, RouterLink, BaseCard, Tag, Paginator],
+  imports: [SelectComponent, InputComponent, BaseCard, Tag, Paginator],
   templateUrl: './list.html',
   styleUrl: './list.scss',
 })

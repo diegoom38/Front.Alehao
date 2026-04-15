@@ -40,6 +40,11 @@ export class Institutional {
       route: 'casos',
       iconName: 'folder_open', // Ícone de pasta aberta
     },
+    {
+      label: 'Suas adoções',
+      route: 'suas-adocoes',
+      iconName: 'favorite', // Ícone de favorito
+    },
   ]);
 
   constructor() {

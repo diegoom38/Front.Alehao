@@ -1,5 +1,5 @@
 <app-base-card>
-  <main class="max-w-8xl mx-auto space-y-8">
+  <main class="grid gap-4">
     <!-- Identificação do caso -->
     <app-base-card class="mb-4">
       <div class="flex flex-col lg:flex-row lg:items-center md:justify-between gap-6">
@@ -17,10 +17,10 @@
       </div>
     </app-base-card>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
       <!-- Conteúdo principal -->
-      <div class="lg:col-span-2 space-y-8">
+      <div class="flex flex-col gap-4">
         <!-- Descrição -->
         <app-base-card>
           <h3 class="text-lg font-semibold mb-3">Descrição da denúncia</h3>
@@ -71,7 +71,7 @@
       </div>
 
       <!-- Sidebar institucional -->
-      <aside class="space-y-6">
+      <aside class="flex flex-col gap-4">
 
         <!-- Status -->
         <app-base-card>
@@ -104,7 +104,7 @@
         <app-base-card>
           <h3 class="text-sm text-slate-500 mb-2">Ações</h3>
           <div class="grid gap-2">
-            <app-button label="Marcar como concluído" [fullWidth]="true"></app-button>
+            <app-button label="Marcar como concluído" [fullWidth]="true" (click)="concluirCaso()"></app-button>
             <app-button label="Alterar prioridade" [fullWidth]="true" type="success"></app-button>
             <app-button label="Escalar caso" [fullWidth]="true" type="secondary"></app-button>
           </div>

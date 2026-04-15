@@ -7,10 +7,12 @@ import { InputComponent } from '../../../../shared/components/input/input.compon
 import { RouterLink } from "@angular/router";
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { BaseCard } from "../../../../shared/components/base-card/base-card";
+import { Tag } from "../../../../shared/components/tag/tag";
+import { Paginator } from "../../../../shared/components/paginator/paginator";
 
 @Component({
   selector: 'app-list',
-  imports: [SelectComponent, InputComponent, RouterLink, ButtonComponent, BaseCard],
+  imports: [SelectComponent, InputComponent, RouterLink, ButtonComponent, BaseCard, Tag, Paginator],
   templateUrl: './list.html',
   styleUrl: './list.scss',
 })
