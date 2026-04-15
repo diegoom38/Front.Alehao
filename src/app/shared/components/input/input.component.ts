@@ -16,7 +16,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
       <div class="flex justify-between items-end px-1">
         <label 
           [for]="inputId"
-          class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">
+          class="text-[10px] font-black uppercase tracking-widest ml-1"
+          style="color: var(--text-muted);">
           {{ label() }}
         </label>
         
@@ -34,12 +35,13 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
           [autocomplete]="autocomplete()"
           (input)="handleInput($event)"
           (blur)="onTouched()"
-          class="w-full max-h-[48px] px-4 py-3 bg-slate-50 border border-[var(--color-primary)]/30 rounded-2xl 
-                 text-slate-900 font-medium placeholder:text-slate-300
-                 focus:border-[var(--color-primary)] focus:bg-white focus:ring-4 focus:ring-[var(--color-primary)]/5
+          class="w-full max-h-[48px] px-4 py-3 border rounded-2xl 
+                 font-medium 
+                 focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary)]/5
                  transition-all outline-none 
                  disabled:opacity-50 disabled:cursor-not-allowed
                  selection:bg-[var(--color-primary)]/10"
+          style="background-color: var(--input-bg); border-color: var(--input-border); color: var(--input-text);"
         >
         
         <div class="absolute right-4 top-1/2 -translate-y-1/2">
@@ -48,7 +50,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
       </div>
 
       @if (hint()) {
-        <p class="text-[10px] text-slate-400 px-1">{{ hint() }}</p>
+        <p class="text-[10px] px-1" style="color: var(--text-muted);">{{ hint() }}</p>
       }
     </div>
   `

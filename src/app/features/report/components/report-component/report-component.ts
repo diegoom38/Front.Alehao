@@ -15,13 +15,14 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { SelectComponent, SelectOption } from '../../../../shared/components/select/select.component';
 import { TextareaComponent } from '../../../../shared/components/textarea/textarea.component';
+import { DarkModeToggleComponent } from '../../../../shared/components/dark-mode-toggle/dark-mode-toggle.component';
 
 @Component({
   selector: 'app-report-component',
   standalone: true,
   templateUrl: './report-component.html',
   styleUrl: './report-component.scss',
-  imports: [ButtonComponent, ReactiveFormsModule, InputComponent, SelectComponent, TextareaComponent],
+  imports: [ButtonComponent, ReactiveFormsModule, InputComponent, SelectComponent, TextareaComponent, DarkModeToggleComponent],
 })
 export class ReportComponent implements AfterViewInit {
   public step: WritableSignal<number> = signal<number>(1);

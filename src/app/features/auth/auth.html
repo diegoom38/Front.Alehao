@@ -1,4 +1,4 @@
-<div class="min-h-screen bg-white font-sans antialiased flex flex-col md:flex-row">
+<div class="min-h-screen font-sans antialiased flex flex-col md:flex-row" style="background-color: var(--bg-primary);">
 
   <section class="relative w-full md:w-[60%] min-h-[40vh] md:min-h-screen flex items-end p-8 md:p-20 overflow-hidden">
     <div class="absolute inset-0 z-0">
@@ -25,16 +25,19 @@
     </div>
   </section>
 
-  <section class="w-full md:w-[40%] bg-white flex flex-col justify-center p-8 md:p-16 relative">
-    <a href="#" class="absolute top-8 right-8 text-slate-400 hover:text-[var(--color-primary)] transition">
-      <span class="text-2xl font-light">✕</span>
-    </a>
+  <section class="w-full md:w-[40%] flex flex-col justify-center p-8 md:p-16 relative" style="background-color: var(--bg-primary);">
+    <div class="absolute top-8 right-8 flex items-center gap-4">
+      <app-dark-mode-toggle></app-dark-mode-toggle>
+      <a href="#" class="text-slate-400 hover:text-[var(--color-primary)] transition">
+        <span class="text-2xl font-light">✕</span>
+      </a>
+    </div>
 
     <div class="max-w-sm mx-auto w-full">
       <header class="mb-10 text-center md:text-left">
-        <h3 class="text-3xl font-black text-slate-900 mb-2">Portal do <span
+        <h3 class="text-3xl font-black mb-2" style="color: var(--text-primary);">Portal do <span
             class="text-[var(--color-primary)]">Anjo</span></h3>
-        <p class="text-slate-500 font-bold text-sm uppercase tracking-tighter">Acesso restrito para instituições</p>
+        <p class="font-bold text-sm uppercase tracking-tighter" style="color: var(--text-secondary);">Acesso restrito para instituições</p>
       </header>
 
       <form class="space-y-6">

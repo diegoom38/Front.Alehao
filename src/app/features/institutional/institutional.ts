@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, inject, PLATFORM_ID, signal } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { DarkModeToggleComponent } from '../../shared/components/dark-mode-toggle/dark-mode-toggle.component';
 
 interface MenuItem {
   label: string;
@@ -13,7 +14,7 @@ interface MenuItem {
   selector: 'app-institutional',
   standalone: true,
   // Adicionado RouterLinkActive para destacar o item de menu ativo
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, DarkModeToggleComponent],
   templateUrl: './institutional.html',
   styleUrl: './institutional.scss',
 })

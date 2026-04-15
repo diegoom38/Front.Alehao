@@ -27,6 +27,57 @@
   /* --- Acento para o Logo e Botões --- */
   --accent-blue: #3b82f6;          /* Blue 500 */
   --accent-blue-glow: rgba(59, 130, 246, 0.2);
+
+  /* --- Component Variables --- */
+  --input-bg: var(--bg-primary);
+  --input-border: var(--border-primary);
+  --input-text: var(--text-primary);
+  --input-placeholder: var(--text-muted);
+  --button-primary-bg: var(--color-primary);
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: transparent;
+  --button-secondary-border: var(--color-primary);
+  --button-secondary-text: var(--color-primary);
+}
+
+.dark {
+  --bg-primary: #1a1a1a;      /* dark:bg-gray-900 */
+  --bg-secondary: #2d2d2d;    /* dark:bg-gray-800 */
+  --bg-tertiary: #404040;    /* dark:bg-gray-700 */
+  --bg-accent: #1e3a5f;       /* dark accent */
+  --text-primary: #ffffff;   /* dark:text-white */
+  --text-secondary: #adb5bd; /* dark:text-gray-400 */
+  --text-muted: #6c757d;      /* dark:text-gray-500 */
+  --text-light: #e9ecef;      /* dark:text-gray-200 */
+  --border-primary: #495057; /* dark:border-gray-600 */
+  --border-secondary: #6c757d; /* dark:border-gray-500 */
+  --shadow: rgba(0, 0, 0, 0.3);
+
+  /* Component Variables */
+  --input-bg: var(--bg-secondary);
+  --input-border: var(--border-primary);
+  --input-text: var(--text-primary);
+  --input-placeholder: var(--text-muted);
+  --button-primary-bg: var(--color-primary);
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: transparent;
+  --button-secondary-border: var(--color-primary);
+  --button-secondary-text: var(--color-primary);
+}
+
+.dark {
+  --bg-primary: #1a1a1a;      /* dark:bg-gray-900 */
+  --bg-secondary: #2d2d2d;    /* dark:bg-gray-800 */
+  --bg-tertiary: #404040;    /* dark:bg-gray-700 */
+  --text-primary: #ffffff;   /* dark:text-white */
+  --text-secondary: #adb5bd; /* dark:text-gray-400 */
+  --border-primary: #495057; /* dark:border-gray-600 */
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Opcional: Ajuste para garantir que o scrollbar da sidebar não fique feio no dark */
