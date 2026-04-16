@@ -1,14 +1,11 @@
 <app-base-card>
   <main class="grid gap-6">
-
     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-
       <div class="flex items-center gap-4">
-
-        <div class="w-16 h-16 rounded-2xl flex items-center justify-center border shadow-sm bg-[var(--bg-secondary)] border-[var(--border-primary)]">
-          <span class="material-symbols-outlined text-3xl text-[var(--color-primary)]">
-            pets
-          </span>
+        <div
+          class="w-16 h-16 rounded-2xl flex items-center justify-center border shadow-sm bg-[var(--bg-secondary)] border-[var(--border-primary)]"
+        >
+          <span class="material-symbols-outlined text-3xl text-[var(--color-primary)]"> pets </span>
         </div>
 
         <div>
@@ -18,107 +15,68 @@
 
           <h2 class="text-2xl font-bold text-[var(--text-primary)]">
             Pipoca
-            <span class="font-light text-lg ml-2 text-[var(--text-muted)]">
-              #PET-2031
-            </span>
+            <span class="font-light text-lg ml-2 text-[var(--text-muted)]"> #PET-2031 </span>
           </h2>
 
           <p class="text-sm italic text-[var(--text-secondary)]">
             Resgatado em 02/04/2026 • São Paulo - SP
           </p>
         </div>
-
       </div>
 
       <div class="flex flex-wrap gap-3 items-center">
+        <div
+          class="flex items-center gap-3 px-4 py-2 rounded-xl border bg-[var(--bg-secondary)] border-[var(--border-primary)]"
+        >
+          <span class="text-sm font-medium text-[var(--text-secondary)]"> Vitrine Pública: </span>
 
-        <div class="flex items-center gap-3 px-4 py-2 rounded-xl border bg-[var(--bg-secondary)] border-[var(--border-primary)]">
-          <span class="text-sm font-medium text-[var(--text-secondary)]">
-            Vitrine Pública:
-          </span>
+          <app-toggle-switch></app-toggle-switch>
 
-          <label class="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" class="sr-only peer" checked>
-
-            <div class="w-11 h-6 rounded-full transition bg-[var(--color-primary)] opacity-20"></div>
-
-            <div class="absolute left-[2px] top-[2px] w-5 h-5 rounded-full transition bg-[var(--color-primary)]"></div>
-          </label>
-
-          <span class="text-xs font-bold uppercase text-[var(--color-primary)]">
-            Ativo
-          </span>
+          <span class="text-xs font-bold uppercase text-[var(--color-primary)]"> Ativo </span>
         </div>
 
         <app-button label="Visualizar no Portal" type="secondary"></app-button>
         <app-button label="Salvar Alterações"></app-button>
       </div>
-
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
       <div class="lg:col-span-2 flex flex-col gap-4">
-
         <app-base-card>
           <div class="flex items-center justify-between mb-4">
-
             <h3 class="text-lg font-semibold flex items-center gap-2 text-[var(--text-primary)]">
-              <span class="material-symbols-outlined text-[var(--color-primary)]">
-                edit_note
-              </span>
+              <span class="material-symbols-outlined text-[var(--color-primary)]"> edit_note </span>
               Descrição da PDP
             </h3>
 
-            <span class="text-[10px] px-2 py-1 rounded uppercase italic bg-[var(--bg-tertiary)] text-[var(--text-muted)]">
+            <span
+              class="text-[10px] px-2 py-1 rounded uppercase italic bg-[var(--bg-tertiary)] text-[var(--text-muted)]"
+            >
               HTML / Editor
             </span>
-
           </div>
 
-          <div class="rounded-xl overflow-hidden border border-[var(--border-primary)]">
-
-            <div class="p-2 flex gap-2 border-b bg-[var(--bg-tertiary)] border-[var(--border-primary)]">
-              <button class="p-1 rounded hover:opacity-70 transition">
-                <span class="material-symbols-outlined text-sm">format_bold</span>
-              </button>
-              <button class="p-1 rounded hover:opacity-70 transition">
-                <span class="material-symbols-outlined text-sm">format_italic</span>
-              </button>
-              <button class="p-1 rounded hover:opacity-70 transition">
-                <span class="material-symbols-outlined text-sm">format_list_bulleted</span>
-              </button>
-            </div>
-
-            <textarea
-              class="w-full p-4 text-sm min-h-[250px] leading-relaxed focus:outline-none bg-[var(--bg-secondary)] text-[var(--text-primary)]"
-              placeholder="Escreva aqui a história do animal..."
-            ></textarea>
-
-          </div>
+            <app-rich-text></app-rich-text>
         </app-base-card>
 
         <app-base-card>
           <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-semibold text-[var(--text-primary)]">
-              Galeria de Vitrine
-            </h3>
+            <h3 class="text-lg font-semibold text-[var(--text-primary)]">Galeria de Vitrine</h3>
 
             <app-button label="Adicionar Fotos" type="secondary" size="sm"></app-button>
           </div>
 
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-
-            <div class="aspect-square rounded-xl border-2 border-dashed flex flex-col items-center justify-center gap-2 cursor-pointer transition border-[var(--border-primary)] bg-[var(--bg-tertiary)]">
-              <span class="material-symbols-outlined text-[var(--text-muted)]">
-                add_a_photo
-              </span>
-              <span class="text-[10px] font-bold uppercase text-[var(--text-muted)]">
-                Capa
-              </span>
+            <div
+              class="aspect-square rounded-xl border-2 border-dashed flex flex-col items-center justify-center gap-2 cursor-pointer transition border-[var(--border-primary)] bg-[var(--bg-tertiary)]"
+            >
+              <span class="material-symbols-outlined text-[var(--text-muted)]"> add_a_photo </span>
+              <span class="text-[10px] font-bold uppercase text-[var(--text-muted)]"> Capa </span>
             </div>
 
-            <div class="relative aspect-square rounded-xl overflow-hidden group bg-[var(--bg-tertiary)]">
+            <div
+              class="relative aspect-square rounded-xl overflow-hidden group bg-[var(--bg-tertiary)]"
+            >
               <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition">
                 <button class="p-1 rounded shadow-sm bg-red-500 text-white">
                   <span class="material-symbols-outlined text-xs">delete</span>
@@ -131,25 +89,17 @@
                 </span>
               </div>
             </div>
-
           </div>
         </app-base-card>
-
       </div>
 
       <aside class="flex flex-col gap-4">
-
         <app-base-card class="bg-[var(--bg-tertiary)] border-[var(--border-primary)]">
-          <p class="text-sm mb-1 text-[var(--text-secondary)]">
-            Situação do Processo
-          </p>
+          <p class="text-sm mb-1 text-[var(--text-secondary)]">Situação do Processo</p>
 
-          <p class="text-xl font-bold text-[var(--text-primary)]">
-            Pronto para Adoção
-          </p>
+          <p class="text-xl font-bold text-[var(--text-primary)]">Pronto para Adoção</p>
 
           <div class="mt-4 pt-4 border-t border-[var(--border-primary)]">
-
             <div class="flex justify-between text-xs text-[var(--text-secondary)]">
               <span>Saúde</span>
               <span>100%</span>
@@ -169,30 +119,22 @@
           <div class="space-y-3">
             <div>
               <p class="text-[10px] text-[var(--text-muted)]">Espécie / Raça</p>
-              <p class="text-sm font-semibold text-[var(--text-primary)]">
-                Cão • Vira-lata (SRD)
-              </p>
+              <p class="text-sm font-semibold text-[var(--text-primary)]">Cão • Vira-lata (SRD)</p>
             </div>
 
             <div>
               <p class="text-[10px] text-[var(--text-muted)]">Idade</p>
-              <p class="text-sm font-semibold text-[var(--text-primary)]">
-                2 anos
-              </p>
+              <p class="text-sm font-semibold text-[var(--text-primary)]">2 anos</p>
             </div>
           </div>
         </app-base-card>
 
         <app-base-card>
-          <p class="text-xs uppercase mb-3 text-[var(--text-muted)]">
-            Gestão
-          </p>
+          <p class="text-xs uppercase mb-3 text-[var(--text-muted)]">Gestão</p>
 
           <app-button label="Marcar como Adotado" [fullWidth]="true" type="success"></app-button>
         </app-base-card>
-
       </aside>
-
     </div>
   </main>
 </app-base-card>

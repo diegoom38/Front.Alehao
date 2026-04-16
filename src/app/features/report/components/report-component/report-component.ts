@@ -16,13 +16,14 @@ import { InputComponent } from '../../../../shared/components/input/input.compon
 import { SelectComponent, SelectOption } from '../../../../shared/components/select/select.component';
 import { TextareaComponent } from '../../../../shared/components/textarea/textarea.component';
 import { DarkModeToggleComponent } from '../../../../shared/components/dark-mode-toggle/dark-mode-toggle.component';
+import { ToggleSwitchComponent } from "../../../../shared/components/toggle/toggle";
 
 @Component({
   selector: 'app-report-component',
   standalone: true,
   templateUrl: './report-component.html',
   styleUrl: './report-component.scss',
-  imports: [ButtonComponent, ReactiveFormsModule, InputComponent, SelectComponent, TextareaComponent, DarkModeToggleComponent],
+  imports: [ButtonComponent, ReactiveFormsModule, InputComponent, SelectComponent, TextareaComponent, DarkModeToggleComponent, ToggleSwitchComponent],
 })
 export class ReportComponent implements AfterViewInit {
   public step: WritableSignal<number> = signal<number>(1);

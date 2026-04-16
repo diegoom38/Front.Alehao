@@ -1,7 +1,6 @@
 import { Component, signal, computed, inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ButtonComponent } from '../../../shared/components/button/button.component';
-import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { FormBuilder } from '@angular/forms';
 import { Tag } from "../../../shared/components/tag/tag";
 import { BaseCard } from "../../../shared/components/base-card/base-card";
