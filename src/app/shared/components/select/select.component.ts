@@ -35,12 +35,13 @@ export interface SelectOption {
           [disabled]="disabled"
           (change)="handleChange($event)"
           (blur)="onTouched()"
-          class="w-full max-h-[48px] px-4 mr-6 py-3 bg-slate-50 border border-[var(--color-primary)]/30 rounded-2xl 
-                 text-slate-900 font-medium appearance-none
-                 focus:border-[var(--color-primary)] focus:bg-white focus:ring-4 focus:ring-[var(--color-primary)]/5
+          class="w-full max-h-[48px] px-4 py-3 border rounded-2xl 
+                 font-medium appearance-none
+                 focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary)]/5
                  transition-all outline-none 
                  disabled:opacity-50 disabled:cursor-not-allowed
-                 cursor-pointer">
+                 selection:bg-[var(--color-primary)]/10"
+          style="background-color: var(--input-bg); border-color: var(--input-border); color: var(--input-text);">
           
           @if (placeholder()) {
             <option value="" disabled selected hidden>{{ placeholder() }}</option>

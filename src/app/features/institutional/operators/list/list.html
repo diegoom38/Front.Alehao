@@ -1,47 +1,64 @@
-<app-base-card>  <!-- Lista de Operadores (Cards estilo curso) -->
+<app-base-card>
   <div class="max-w-8xl mx-auto">
 
     <!-- Filtros -->
     <div
-      class="flex justify-between items-end pb-4 md:flex-row md:items-end flex-col gap-4 bg-white border-b border-slate-200">
+      class="flex justify-between items-end pb-4 md:flex-row md:items-end flex-col gap-4 border-b"
+      [style.background-color]="'var(--bg-secondary)'"
+      [style.border-color]="'var(--border-primary)'"
+    >
       <div class="flex flex-col md:flex-row gap-3 w-full">
         <app-input class="w-full md:w-[220px]" label="Buscar por nome" placeholder="João da Silva"></app-input>
         <app-select class="w-full md:w-[220px]" [options]="statusOptions()" label="Status"></app-select>
       </div>
 
-      <app-button class="min-w-[175px]" label="Novo Operador">
-      </app-button>
+      <app-button class="min-w-[175px]" label="Novo Operador"></app-button>
     </div>
 
-    <!-- Grid de cards -->
+    <!-- Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
 
       @for (item of [].constructor(8); track $index) {
-      <!-- Card Operador -->
 
       <app-base-card [routerLink]="['../detalhes', 2031]">
+
+        <!-- Header -->
         <div class="flex items-center gap-4 mb-4">
-          <div class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-sm font-bold">JS</div>
+          <div
+            class="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold"
+            [style.background-color]="'var(--bg-tertiary)'"
+            [style.color]="'var(--text-primary)'"
+          >
+            JS
+          </div>
+
           <div>
-            <p class="font-semibold text-slate-900">João Silva</p>
-            <p class="text-xs text-slate-500">Operador</p>
+            <p class="font-semibold" [style.color]="'var(--text-primary)'">
+              João Silva
+            </p>
+            <p class="text-xs" [style.color]="'var(--text-secondary)'">
+              Operador
+            </p>
           </div>
         </div>
 
-        <div class="text-sm text-slate-600 space-y-1">
+        <!-- Stats -->
+        <div class="text-sm space-y-1" [style.color]="'var(--text-secondary)'">
           <p>📊 12 casos ativos</p>
           <p>⚡ 3 alta prioridade</p>
         </div>
 
+        <!-- Footer -->
         <div class="mt-4 flex justify-between items-center">
           <app-tag label="Ativo" color="green"></app-tag>
-          <span class="text-slate-400">→</span>
+          <span [style.color]="'var(--text-muted)'">→</span>
         </div>
+
       </app-base-card>
       }
 
     </div>
-    
+
     <app-paginator></app-paginator>
   </div>
 </app-base-card>

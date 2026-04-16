@@ -1,12 +1,79 @@
-    <div class="flex flex-col md:flex-row justify-between items-center mt-8 gap-4 text-sm text-slate-500">
-      <span>Exibindo 8 processos de adoção</span>
+<div class="flex flex-col md:flex-row justify-between items-center mt-10 gap-4 text-sm">
 
-      <div class="flex gap-2">
-        <button
-          class="px-4 py-1.5 border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors disabled:opacity-50">Anterior</button>
-        <button
-          class="px-4 py-1.5 border border-blue-600 bg-blue-600 text-white rounded-xl shadow-lg shadow-blue-100 font-semibold">1</button>
-        <button
-          class="px-4 py-1.5 border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors">Próximo</button>
-      </div>
+  <!-- INFO -->
+  <span class="text-[var(--text-secondary)]">
+    Exibindo <span class="font-semibold text-[var(--text-primary)]">8</span> processos de adoção
+  </span>
+
+  <!-- PAGINATION -->
+  <div class="flex items-center gap-2">
+
+    <!-- PREV -->
+    <button
+      class="px-3 py-2 rounded-xl border text-[var(--text-secondary)]
+             border-[var(--border-primary)]
+             hover:bg-[var(--bg-tertiary)]
+             disabled:opacity-40 disabled:cursor-not-allowed
+             transition"
+    >
+      Anterior
+    </button>
+
+    <!-- PAGE NUMBERS -->
+    <div class="flex items-center gap-1">
+
+      <!-- ACTIVE -->
+      <button
+        class="w-9 h-9 flex items-center justify-center rounded-xl
+               bg-[var(--color-primary)] text-white font-semibold
+               shadow-md"
+      >
+        1
+      </button>
+
+      <!-- NORMAL -->
+      <button
+        class="w-9 h-9 flex items-center justify-center rounded-xl
+               text-[var(--text-secondary)]
+               hover:bg-[var(--bg-tertiary)]
+               transition"
+      >
+        2
+      </button>
+
+      <button
+        class="w-9 h-9 flex items-center justify-center rounded-xl
+               text-[var(--text-secondary)]
+               hover:bg-[var(--bg-tertiary)]
+               transition"
+      >
+        3
+      </button>
+
+      <!-- DOTS -->
+      <span class="px-2 text-[var(--text-muted)]">...</span>
+
+      <button
+        class="w-9 h-9 flex items-center justify-center rounded-xl
+               text-[var(--text-secondary)]
+               hover:bg-[var(--bg-tertiary)]
+               transition"
+      >
+        12
+      </button>
+
     </div>
+
+    <!-- NEXT -->
+    <button
+      class="px-3 py-2 rounded-xl border text-[var(--text-secondary)]
+             border-[var(--border-primary)]
+             hover:bg-[var(--bg-tertiary)]
+             disabled:opacity-40 disabled:cursor-not-allowed
+             transition"
+    >
+      Próximo
+    </button>
+
+  </div>
+</div>

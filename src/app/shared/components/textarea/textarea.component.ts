@@ -32,13 +32,13 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
           [rows]="rows()"
           (input)="handleInput($event)"
           (blur)="onTouched()"
-          class="w-full px-6 py-4 bg-slate-50 border border-[var(--color-primary)]/30 rounded-3xl 
-                 text-slate-900 font-medium placeholder:text-slate-300
-                 focus:border-[var(--color-primary)] focus:bg-white focus:ring-4 focus:ring-[var(--color-primary)]/5
+          class="w-full max-h-[48px] px-4 py-3 border rounded-2xl 
+                 font-medium 
+                 focus:border-[var(--color-primary)] focus:ring-4 focus:ring-[var(--color-primary)]/5
                  transition-all outline-none 
                  disabled:opacity-50 disabled:cursor-not-allowed
-                 selection:bg-[var(--color-primary)]/10
-                 min-h-[120px] resize-y"
+                 selection:bg-[var(--color-primary)]/10"
+          style="background-color: var(--input-bg); border-color: var(--input-border); color: var(--input-text);"
         ></textarea>
         
         <div class="absolute right-4 bottom-4 opacity-20 pointer-events-none group-focus-within:text-[var(--color-primary)] group-focus-within:opacity-100 transition-all">

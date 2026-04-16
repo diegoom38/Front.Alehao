@@ -4,6 +4,7 @@ import { ButtonComponent } from '../../../shared/components/button/button.compon
 import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { FormBuilder } from '@angular/forms';
 import { Tag } from "../../../shared/components/tag/tag";
+import { BaseCard } from "../../../shared/components/base-card/base-card";
 
 // Tipagem baseada no seu modelo de dados
 interface Report {
@@ -18,7 +19,7 @@ interface Report {
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, Tag],
+  imports: [CommonModule, ButtonComponent, Tag, BaseCard],
   templateUrl: './dashboard.html',
 })
 export class DashboardComponent {

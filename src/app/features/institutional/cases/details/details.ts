@@ -7,10 +7,11 @@ import { InputComponent } from '../../../../shared/components/input/input.compon
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { BaseCard } from '../../../../shared/components/base-card/base-card';
 import { ModalService } from '../../../../shared/services/modal';
+import { Tag } from "../../../../shared/components/tag/tag";
 
 @Component({
   selector: 'app-details',
-  imports: [SelectComponent, InputComponent, ButtonComponent, BaseCard],
+  imports: [SelectComponent, InputComponent, ButtonComponent, BaseCard, Tag],
   templateUrl: './details.html',
   styleUrl: './details.scss',
 })

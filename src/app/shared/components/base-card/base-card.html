@@ -1,11 +1,13 @@
 <div
-  class="bg-white rounded-2xl border shadow-sm transition w-full"
+  class="rounded-2xl border transition w-full h-full"
   [ngClass]="{
     'hover:shadow-md cursor-pointer': hover,
-    'p-6': padding,
-    'border-slate-200': !borderColor
+    'p-6': padding
   }"
   [class]="borderColor"
+  [style.background-color]="'var(--bg-secondary)'"
+  [style.border-color]="borderColor ? null : 'var(--border-primary)'"
+  [style.box-shadow]="'0 1px 2px var(--shadow)'"
 >
   <ng-content></ng-content>
 </div>

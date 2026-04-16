@@ -1,58 +1,101 @@
-<!-- Tela de Detalhe do Operador -->
 <app-base-card>
 
-  <header class="bg-white border-b border-slate-200">
+  <!-- HEADER -->
+  <header class="border-b" [style.background-color]="'var(--bg-secondary)'"
+    [style.border-color]="'var(--border-primary)'">
     <div class="max-w-8xl mx-auto pb-4 flex items-center justify-between">
+
       <div>
-        <h1 class="text-2xl font-bold text-slate-900">João Silva</h1>
-        <p class="text-sm text-slate-500">Detalhes do operador</p>
+        <h1 class="text-2xl font-bold" [style.color]="'var(--text-primary)'">
+          João Silva
+        </h1>
+        <p class="text-sm" [style.color]="'var(--text-secondary)'">
+          Detalhes do operador
+        </p>
       </div>
 
-      <app-button label="Editar">
-      </app-button>
+      <app-button label="Editar"></app-button>
     </div>
   </header>
 
+  <!-- CONTENT -->
   <main class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
 
-    <!-- Infos -->
+    <!-- INFOS -->
     <div class="grid gap-4">
+
       <app-base-card>
-        <h3 class="text-sm text-slate-500 mb-1">Status</h3>
-        <p class="font-semibold text-green-600">Ativo</p>
+        <h3 class="text-xs uppercase tracking-wide mb-2" [style.color]="'var(--text-muted)'">
+          Status
+        </h3>
+
+        <app-tag label="Ativo"></app-tag>
       </app-base-card>
 
       <app-base-card>
-        <h3 class="text-sm text-slate-500 mb-1">Email</h3>
-        <p class="text-sm text-slate-700">joao@email.com</p>
+        <h3 class="text-xs uppercase tracking-wide mb-2" [style.color]="'var(--text-muted)'">
+          Email
+        </h3>
+
+        <p class="text-sm" [style.color]="'var(--text-primary)'">
+          joao@email.com
+        </p>
       </app-base-card>
 
       <app-base-card>
-        <h3 class="text-sm text-slate-500 mb-1">Casos ativos</h3>
-        <p class="font-semibold text-slate-900">12</p>
+        <h3 class="text-xs uppercase tracking-wide mb-2" [style.color]="'var(--text-muted)'">
+          Casos ativos
+        </h3>
+
+        <p class="text-2xl font-bold" [style.color]="'var(--text-primary)'">
+          12
+        </p>
       </app-base-card>
+
     </div>
 
-    <!-- Casos do operador -->
-    <div class="lg:col-span-2 ">
+    <!-- CASOS -->
+    <div class="lg:col-span-2">
       <app-base-card>
-        <h3 class="text-lg font-semibold mb-4">Casos atribuídos</h3>
+
+        <h3 class="text-lg font-semibold mb-4" [style.color]="'var(--text-primary)'">
+          Casos atribuídos
+        </h3>
 
         <div class="grid gap-4">
-          <app-base-card  class="flex justify-between items-center w-full">
+
+          <!-- Caso -->
+          <app-base-card class="flex justify-between items-center w-full hover:shadow-md transition">
+
             <div>
-              <p class="font-medium">#AHL-2031</p>
-              <p class="text-sm text-slate-500">Maus-tratos</p>
+              <p class="font-medium" [style.color]="'var(--text-primary)'">
+                #AHL-2031
+              </p>
+
+              <p class="text-sm" [style.color]="'var(--text-secondary)'">
+                Maus-tratos
+              </p>
             </div>
-            <span class="text-xs px-2 py-1 rounded-md bg-yellow-100 text-yellow-700">Em andamento</span>
+
+
+            <app-tag label="Em andamento"></app-tag>
           </app-base-card>
 
-          <app-base-card class="flex justify-between items-center w-full">
+          <!-- Caso -->
+          <app-base-card class="flex justify-between items-center w-full hover:shadow-md transition">
+
             <div>
-              <p class="font-medium">#AHL-2025</p>
-              <p class="text-sm text-slate-500">Abandono</p>
+              <p class="font-medium" [style.color]="'var(--text-primary)'">
+                #AHL-2025
+              </p>
+
+              <p class="text-sm" [style.color]="'var(--text-secondary)'">
+                Abandono
+              </p>
             </div>
-            <span class="text-xs px-2 py-1 rounded-md bg-red-100 text-red-600">Alta</span>
+
+
+            <app-tag label="Abandono"></app-tag>
           </app-base-card>
 
         </div>

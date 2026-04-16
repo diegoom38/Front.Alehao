@@ -38,6 +38,13 @@
   --button-secondary-bg: transparent;
   --button-secondary-border: var(--color-primary);
   --button-secondary-text: var(--color-primary);
+
+  --bg-primary: #f8fafc;        /* fundo geral (slate-50) */
+  --bg-secondary: #ffffff;      /* cards */
+  --bg-tertiary: #f1f5f9;       /* hover / sections */
+  --text-primary: #0f172a;      /* quase preto */
+  --text-secondary: #475569;    /* cinza médio */
+  --border-primary: #e2e8f0;    /* borda suave */
 }
 
 .dark {
