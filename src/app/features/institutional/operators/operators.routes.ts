@@ -1,6 +1,4 @@
 import { Routes } from "@angular/router";
-import { List } from "./list/list";
-import { Details } from "./details/details";
 
 export const routes: Routes = [
   {
@@ -12,11 +10,13 @@ export const routes: Routes = [
   {
     title: 'Lista de Voluntário',
     path: 'lista',
-    loadComponent: () => List
+    loadComponent: () =>
+      import('./list/list').then(m => m.List)
   },
   {
     title: 'Detalhes do Voluntário',
     path: 'detalhes/:id',
-    loadComponent: () => Details
+    loadComponent: () =>
+      import('./details/details').then(m => m.Details)
   }
 ];
