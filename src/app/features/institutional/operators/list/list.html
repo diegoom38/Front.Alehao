@@ -1,12 +1,8 @@
-<app-base-card>
   <div class="max-w-8xl mx-auto">
 
     <!-- Filtros -->
-    <div
-      class="flex justify-between items-end pb-4 md:flex-row md:items-end flex-col gap-4 border-b"
-      [style.background-color]="'var(--bg-secondary)'"
-      [style.border-color]="'var(--border-primary)'"
-    >
+    <div class="flex justify-between items-end pb-4 md:flex-row md:items-end flex-col gap-4 border-b"
+      [style.background-color]="'var(--bg-secondary)'" [style.border-color]="'var(--border-primary)'">
       <div class="flex flex-col md:flex-row gap-3 w-full">
         <app-input class="w-full md:w-[220px]" label="Buscar por nome" placeholder="João da Silva"></app-input>
         <app-select class="w-full md:w-[220px]" [options]="statusOptions()" label="Status"></app-select>
@@ -24,11 +20,8 @@
 
         <!-- Header -->
         <div class="flex items-center gap-4 mb-4">
-          <div
-            class="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold"
-            [style.background-color]="'var(--bg-tertiary)'"
-            [style.color]="'var(--text-primary)'"
-          >
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold"
+            [style.background-color]="'var(--bg-tertiary)'" [style.color]="'var(--text-primary)'">
             JS
           </div>
 
@@ -61,4 +54,3 @@
 
     <app-paginator></app-paginator>
   </div>
-</app-base-card>

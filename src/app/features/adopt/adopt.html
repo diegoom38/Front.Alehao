@@ -37,48 +37,50 @@
   </div>
 
   <!-- GRID -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+  <div class="min-h-[480px]">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
 
-    @for (pet of filteredPets(); track pet.id) {
+      @for (pet of filteredPets(); track pet.id) {
 
-    <div (click)="openPet(pet)" class="group rounded-2xl overflow-hidden
+      <div (click)="openPet(pet)" class="group rounded-2xl overflow-hidden
           border border-[var(--border-primary)]
           bg-[var(--bg-secondary)]
           cursor-pointer transition
           hover:-translate-y-2 hover:shadow-xl">
 
-      <!-- IMG -->
-      <div class="relative h-64 overflow-hidden">
-        <img [src]="pet.img" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+        <!-- IMG -->
+        <div class="relative h-64 overflow-hidden">
+          <img [src]="pet.img" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
 
-        <span class="absolute top-3 left-3 text-xs font-bold px-3 py-1 rounded-lg
+          <span class="absolute top-3 left-3 text-xs font-bold px-3 py-1 rounded-lg
               bg-[var(--color-primary)] text-white">
-          Disponível
-        </span>
+            Disponível
+          </span>
+        </div>
+
+        <!-- INFO -->
+        <div class="p-4">
+          <h2 class="text-lg font-bold text-[var(--text-primary)]">
+            {{ pet.name }}
+          </h2>
+
+          <p class="text-sm text-[var(--text-secondary)] mt-1">
+            {{ pet.breed }} • {{ pet.age }} • {{ pet.trait }}
+          </p>
+        </div>
+
       </div>
 
-      <!-- INFO -->
-      <div class="p-4">
-        <h2 class="text-lg font-bold text-[var(--text-primary)]">
-          {{ pet.name }}
-        </h2>
-
-        <p class="text-sm text-[var(--text-secondary)] mt-1">
-          {{ pet.breed }} • {{ pet.age }} • {{ pet.trait }}
-        </p>
-      </div>
+      }
 
     </div>
-
-    }
-
   </div>
+
 
   }
 
   <!-- PDP -->
   @else {
-
   <button (click)="closePet()" class="mb-6 text-sm
       text-[var(--text-secondary)]
       hover:text-[var(--text-primary)] transition">
@@ -90,13 +92,17 @@
     <!-- IMG -->
     <img [src]="selectedPet()?.img" class="w-full rounded-2xl
         border border-[var(--border-primary)]
-        shadow-lg" />
+        shadow-lg        
+        h-[320px]
+        w-[596px]
+        object-cover
+        lg:h-[480px]" />
 
     <!-- INFO -->
     <div>
 
       <h1 class="text-4xl font-bold mb-2 text-[var(--text-primary)]">
-        Sou o {{ selectedPet()?.name }}
+        Sou {{ selectedPet()?.name }}
       </h1>
 
       <p class="text-[var(--color-primary)] font-semibold mb-4">

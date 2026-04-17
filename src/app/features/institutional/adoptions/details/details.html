@@ -1,10 +1,8 @@
-<app-base-card>
   <main class="grid gap-6">
     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
       <div class="flex items-center gap-4">
         <div
-          class="w-16 h-16 rounded-2xl flex items-center justify-center border shadow-sm bg-[var(--bg-secondary)] border-[var(--border-primary)]"
-        >
+          class="w-16 h-16 rounded-2xl flex items-center justify-center border shadow-sm bg-[var(--bg-secondary)] border-[var(--border-primary)]">
           <span class="material-symbols-outlined text-3xl text-[var(--color-primary)]"> pets </span>
         </div>
 
@@ -26,8 +24,7 @@
 
       <div class="flex flex-wrap gap-3 items-center">
         <div
-          class="flex items-center gap-3 px-4 py-2 rounded-xl border bg-[var(--bg-secondary)] border-[var(--border-primary)]"
-        >
+          class="flex items-center gap-3 px-4 py-2 rounded-xl border bg-[var(--bg-secondary)] border-[var(--border-primary)]">
           <span class="text-sm font-medium text-[var(--text-secondary)]"> Vitrine Pública: </span>
 
           <app-toggle-switch></app-toggle-switch>
@@ -50,13 +47,12 @@
             </h3>
 
             <span
-              class="text-[10px] px-2 py-1 rounded uppercase italic bg-[var(--bg-tertiary)] text-[var(--text-muted)]"
-            >
+              class="text-[10px] px-2 py-1 rounded uppercase italic bg-[var(--bg-tertiary)] text-[var(--text-muted)]">
               HTML / Editor
             </span>
           </div>
 
-            <app-rich-text></app-rich-text>
+          <app-rich-text></app-rich-text>
         </app-base-card>
 
         <app-base-card>
@@ -68,15 +64,12 @@
 
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div
-              class="aspect-square rounded-xl border-2 border-dashed flex flex-col items-center justify-center gap-2 cursor-pointer transition border-[var(--border-primary)] bg-[var(--bg-tertiary)]"
-            >
+              class="aspect-square rounded-xl border-2 border-dashed flex flex-col items-center justify-center gap-2 cursor-pointer transition border-[var(--border-primary)] bg-[var(--bg-tertiary)]">
               <span class="material-symbols-outlined text-[var(--text-muted)]"> add_a_photo </span>
               <span class="text-[10px] font-bold uppercase text-[var(--text-muted)]"> Capa </span>
             </div>
 
-            <div
-              class="relative aspect-square rounded-xl overflow-hidden group bg-[var(--bg-tertiary)]"
-            >
+            <div class="relative aspect-square rounded-xl overflow-hidden group bg-[var(--bg-tertiary)]">
               <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition">
                 <button class="p-1 rounded shadow-sm bg-red-500 text-white">
                   <span class="material-symbols-outlined text-xs">delete</span>
@@ -137,4 +130,3 @@
       </aside>
     </div>
   </main>
-</app-base-card>

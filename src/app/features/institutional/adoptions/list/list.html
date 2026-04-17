@@ -1,144 +1,101 @@
-<app-base-card>
+<!-- HEADER -->
+<header class="border-b" [style.background-color]="'var(--bg-secondary)'"
+  [style.border-color]="'var(--border-primary)'">
+  <div class="max-w-8xl pb-4 mx-auto flex items-center justify-between">
 
-  <!-- HEADER -->
-  <header
-    class="border-b"
-    [style.background-color]="'var(--bg-secondary)'"
-    [style.border-color]="'var(--border-primary)'"
-  >
-    <div class="max-w-8xl pb-4 mx-auto flex items-center justify-between">
+    <div class="flex flex-col md:flex-row gap-3 w-full">
+      <app-input class="w-full md:w-[280px]" placeholder="Nome do animal ou protocolo" label="Buscar adoções">
+      </app-input>
 
-      <div class="flex flex-col md:flex-row gap-3 w-full">
-        <app-input
-          class="w-full md:w-[280px]"
-          placeholder="Nome do animal ou protocolo"
-          label="Buscar adoções">
-        </app-input>
+      <app-select class="w-full md:w-[220px]" [options]="statusOptions()" label="Situação">
+      </app-select>
+    </div>
 
-        <app-select
-          class="w-full md:w-[220px]"
-          [options]="statusOptions()"
-          label="Situação">
-        </app-select>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<main class="max-w-8xl mx-auto py-8">
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    @for (adocao of [].constructor(8); track $index) {
+
+    <app-base-card type="button" class="group transition hover:shadow-md cursor-pointer">
+
+      <!-- TOP -->
+      <div class="flex justify-between items-center mb-4">
+
+        <span class="text-[10px] font-bold tracking-wider uppercase" [style.color]="'var(--text-muted)'">
+          #PET-2026-{{$index}}
+        </span>
+
+        <app-tag label="Em análise" color="amber"></app-tag>
       </div>
 
-    </div>
-  </header>
+      <!-- PET -->
+      <div class="flex items-center gap-4 mb-5">
 
-  <!-- CONTENT -->
-  <main class="max-w-8xl mx-auto py-8">
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-      @for (adocao of [].constructor(8); track $index) {
-
-      <app-base-card
-        type="button"
-        class="group transition hover:shadow-md cursor-pointer"
-      >
-
-        <!-- TOP -->
-        <div class="flex justify-between items-center mb-4">
-
-          <span
-            class="text-[10px] font-bold tracking-wider uppercase"
-            [style.color]="'var(--text-muted)'"
-          >
-            #PET-2026-{{$index}}
+        <div class="w-14 h-14 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden border"
+          [style.background-color]="'var(--bg-tertiary)'" [style.border-color]="'var(--border-primary)'">
+          <span class="material-symbols-outlined text-3xl" [style.color]="'var(--text-muted)'">
+            pets
           </span>
-
-          <app-tag label="Em análise" color="amber"></app-tag>
         </div>
 
-        <!-- PET -->
-        <div class="flex items-center gap-4 mb-5">
+        <div>
+          <h3 class="text-lg font-bold leading-tight transition-colors" [style.color]="'var(--text-primary)'">
+            Pipoca
+          </h3>
 
-          <div
-            class="w-14 h-14 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden border"
-            [style.background-color]="'var(--bg-tertiary)'"
-            [style.border-color]="'var(--border-primary)'"
-          >
-            <span
-              class="material-symbols-outlined text-3xl"
-              [style.color]="'var(--text-muted)'"
-            >
-              pets
-            </span>
-          </div>
-
-          <div>
-            <h3
-              class="text-lg font-bold leading-tight transition-colors"
-              [style.color]="'var(--text-primary)'"
-            >
-              Pipoca
-            </h3>
-
-            <p
-              class="text-xs font-medium"
-              [style.color]="'var(--text-secondary)'"
-            >
-              Vira-lata (SRD)
-            </p>
-          </div>
-
+          <p class="text-xs font-medium" [style.color]="'var(--text-secondary)'">
+            Vira-lata (SRD)
+          </p>
         </div>
 
-        <!-- INFO -->
-        <div
-          class="grid gap-3 pt-4 border-t"
-          [style.border-color]="'var(--border-primary)'"
-        >
+      </div>
 
-          <div class="flex items-center text-sm gap-2"
-               [style.color]="'var(--text-secondary)'">
-            <span class="material-symbols-outlined text-[18px]">
-              location_on
-            </span>
-            Abrigo Central - SP
-          </div>
+      <!-- INFO -->
+      <div class="grid gap-3 pt-4 border-t" [style.border-color]="'var(--border-primary)'">
 
-          <div class="flex items-center text-sm gap-2"
-               [style.color]="'var(--text-secondary)'">
-            <span class="material-symbols-outlined text-[18px]">
-              event_note
-            </span>
-            Solicitado em 15 Abr 2026
-          </div>
-
-        </div>
-
-        <!-- FOOTER -->
-        <div class="mt-5 flex justify-between items-center">
-
-          <span
-            class="text-[11px] font-medium"
-            [style.color]="'var(--text-muted)'"
-          >
-            Aguardando entrevista
+        <div class="flex items-center text-sm gap-2" [style.color]="'var(--text-secondary)'">
+          <span class="material-symbols-outlined text-[18px]">
+            location_on
           </span>
-
-          <div
-            class="flex items-center text-sm font-semibold gap-1 transition"
-            [style.color]="'var(--color-primary)'"
-          >
-            Detalhes
-
-            <span
-              class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1"
-            >
-              chevron_right
-            </span>
-          </div>
-
+          Abrigo Central - SP
         </div>
 
-      </app-base-card>
-      }
+        <div class="flex items-center text-sm gap-2" [style.color]="'var(--text-secondary)'">
+          <span class="material-symbols-outlined text-[18px]">
+            event_note
+          </span>
+          Solicitado em 15 Abr 2026
+        </div>
 
-    </div>
+      </div>
 
-    <app-paginator></app-paginator>
+      <!-- FOOTER -->
+      <div class="mt-5 flex justify-between items-center">
 
-  </main>
-</app-base-card>
+        <span class="text-[11px] font-medium" [style.color]="'var(--text-muted)'">
+          Aguardando entrevista
+        </span>
+
+        <div class="flex items-center text-sm font-semibold gap-1 transition" [style.color]="'var(--color-primary)'">
+          Detalhes
+
+          <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">
+            chevron_right
+          </span>
+        </div>
+
+      </div>
+
+    </app-base-card>
+    }
+
+  </div>
+
+  <app-paginator></app-paginator>
+
+</main>
