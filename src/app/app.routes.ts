@@ -3,12 +3,18 @@ import { ReportComponent } from './features/report/components/report-component/r
 import { DashboardComponent } from './features/institutional/dashboard/dashboard';
 import { LandingPage } from './features/landing-page/landing-page';
 import { Auth } from './features/auth/auth';
+import { Adopt } from './features/adopt/adopt';
 
 export const routes: Routes = [
   {
     title: 'Alehao',
     path: '',
     loadComponent: () => LandingPage,
+  },
+  {
+    title: 'Adote com Alehao',
+    path: 'adote',
+    loadComponent: () => Adopt,
   },
   {
     title: 'Autenticar',

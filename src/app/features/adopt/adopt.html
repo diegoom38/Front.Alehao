@@ -1,0 +1,155 @@
+<app-header></app-header>
+<div class="max-w-7xl mx-auto px-6 py-10">
+  <!-- LISTAGEM -->
+  @if (!selectedPet()) {
+
+  <!-- HEADER -->
+  <div class="text-center mb-12">
+    <h1 class="text-4xl md:text-5xl font-extrabold
+        bg-gradient-to-r from-white to-[var(--color-primary)]
+        bg-clip-text text-transparent">
+      Encontre seu Companheiro
+    </h1>
+
+    <p class="text-[var(--text-secondary)] mt-3">
+      Diversos pets aguardam por um lar 🐾
+    </p>
+  </div>
+
+  <!-- FILTROS -->
+  <div class="flex flex-wrap justify-center gap-2 mb-10 p-2 rounded-2xl
+      border border-[var(--border-primary)]
+      bg-[var(--bg-secondary)] w-fit mx-auto">
+
+    @for (s of species(); track s) {
+
+    <button (click)="setFilter(s)" class="px-4 py-2 rounded-xl text-sm font-semibold transition"
+      [class.bg-[var(--color-primary)]]="currentFilter() === s" [class.text-white]="currentFilter() === s"
+      [class.shadow]="currentFilter() === s" [class.text-[var(--text-secondary)]]="currentFilter() !== s"
+      [class.hover:bg-[var(--bg-tertiary)]]="currentFilter() !== s">
+
+      {{ s === 'Outros' ? 'Pequenos Pets' : s }}
+
+    </button>
+
+    }
+
+  </div>
+
+  <!-- GRID -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+
+    @for (pet of filteredPets(); track pet.id) {
+
+    <div (click)="openPet(pet)" class="group rounded-2xl overflow-hidden
+          border border-[var(--border-primary)]
+          bg-[var(--bg-secondary)]
+          cursor-pointer transition
+          hover:-translate-y-2 hover:shadow-xl">
+
+      <!-- IMG -->
+      <div class="relative h-64 overflow-hidden">
+        <img [src]="pet.img" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+
+        <span class="absolute top-3 left-3 text-xs font-bold px-3 py-1 rounded-lg
+              bg-[var(--color-primary)] text-white">
+          Disponível
+        </span>
+      </div>
+
+      <!-- INFO -->
+      <div class="p-4">
+        <h2 class="text-lg font-bold text-[var(--text-primary)]">
+          {{ pet.name }}
+        </h2>
+
+        <p class="text-sm text-[var(--text-secondary)] mt-1">
+          {{ pet.breed }} • {{ pet.age }} • {{ pet.trait }}
+        </p>
+      </div>
+
+    </div>
+
+    }
+
+  </div>
+
+  }
+
+  <!-- PDP -->
+  @else {
+
+  <button (click)="closePet()" class="mb-6 text-sm
+      text-[var(--text-secondary)]
+      hover:text-[var(--text-primary)] transition">
+    ← Voltar
+  </button>
+
+  <div class="grid md:grid-cols-2 gap-10">
+
+    <!-- IMG -->
+    <img [src]="selectedPet()?.img" class="w-full rounded-2xl
+        border border-[var(--border-primary)]
+        shadow-lg" />
+
+    <!-- INFO -->
+    <div>
+
+      <h1 class="text-4xl font-bold mb-2 text-[var(--text-primary)]">
+        Sou o {{ selectedPet()?.name }}
+      </h1>
+
+      <p class="text-[var(--color-primary)] font-semibold mb-4">
+        {{ selectedPet()?.breed }}
+      </p>
+
+      <!-- TAGS -->
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span class="px-3 py-1 text-sm rounded-lg bg-[var(--bg-tertiary)]">
+          {{ selectedPet()?.species }}
+        </span>
+        <span class="px-3 py-1 text-sm rounded-lg bg-[var(--bg-tertiary)]">
+          {{ selectedPet()?.age }}
+        </span>
+        <span class="px-3 py-1 text-sm rounded-lg bg-[var(--bg-tertiary)]">
+          {{ selectedPet()?.size }}
+        </span>
+        <span class="px-3 py-1 text-sm rounded-lg bg-[var(--bg-tertiary)]">
+          {{ selectedPet()?.trait }}
+        </span>
+      </div>
+
+      <!-- HISTÓRIA -->
+      <p class="text-[var(--text-secondary)] leading-relaxed mb-6">
+        {{ selectedPet()?.history }}
+      </p>
+
+      <!-- SAÚDE -->
+      <div class="bg-[var(--bg-secondary)]
+          border border-[var(--border-primary)]
+          rounded-xl p-4 mb-6">
+
+        <h3 class="font-semibold mb-2 text-[var(--text-primary)]">
+          Saúde
+        </h3>
+
+        <ul class="text-sm text-[var(--text-secondary)] space-y-1">
+          <li>✓ Veterinário OK</li>
+          <li>✓ Vacinas em dia</li>
+          <li>✓ Castrado</li>
+        </ul>
+
+      </div>
+
+      <!-- CTA -->
+      <button class="w-full py-3 rounded-xl font-bold text-white
+          bg-[var(--color-primary)]
+          hover:bg-[var(--color-primary-hover)]
+          transition">
+        Quero adotar
+      </button>
+    </div>
+  </div>
+  }
+</div>
+<app-footer></app-footer>

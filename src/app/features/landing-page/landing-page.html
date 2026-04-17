@@ -1,104 +1,89 @@
-<div class="antialiased" style="background-color: var(--bg-primary); color: var(--text-primary);">
-  <nav class="flex flex-col gap-6 justify-between items-center px-8 py-6 max-w-7xl mx-auto lg:flex-row">
-    <div class="flex items-center gap-3">
-      <div
-        class="bg-[var(--color-secondary)] p-2.5 rounded-2xl shadow-lg shadow-[var(--color-secondary)]/20 text-xl flex items-center justify-center transform -rotate-3">
-        <span class="leading-none">🐾</span>
-      </div>
-      <div class="flex flex-col">
-        <span class="text-2xl font-black text-[var(--color-primary)] tracking-tighter leading-none">ALEHAO</span>
-        <span class="text-[10px] font-extrabold text-[var(--color-secondary-hover)] tracking-[0.3em] uppercase">A Voz
-          dos Animais</span>
-      </div>
-    </div>
-    <div class="hidden lg:flex gap-10 font-bold italic">
-      <a href="#missao" class="hover:text-[var(--color-primary)] transition-colors relative group"
-        style="color: var(--text-secondary);">
-        Nossa Missão
-        <span
-          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--color-secondary)] transition-all group-hover:w-full"></span>
-      </a>
-      <a href="#tecnologia" class="hover:text-[var(--color-primary)] transition-colors relative group"
-        style="color: var(--text-secondary);">
-        Tecnologia Sagrada
-        <span
-          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--color-secondary)] transition-all group-hover:w-full"></span>
-      </a>
-      <a href="#impacto" class="hover:text-[var(--color-primary)] transition-colors relative group"
-        style="color: var(--text-secondary);">
-        Histórias de Luz
-        <span
-          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--color-secondary)] transition-all group-hover:w-full"></span>
-      </a>
-    </div>
-    <div class="flex items-center gap-4">
-      <app-dark-mode-toggle></app-dark-mode-toggle>
-      <app-button label="Proteger um Inocente" [routerLink]="['/denuncie-aqui']"></app-button>
-    </div>
-  </nav>
+<div class="antialiased" style="background-color: var(--bg-primary); color: var(--text-primary)">
+  <app-header></app-header>
 
   <section
-    class="relative px-8 py-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:py-20 overflow-hidden">
+    class="relative px-8 py-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:py-20 overflow-hidden"
+  >
     <div class="md:w-1/2 space-y-8 relative">
-      <h1 class="text-5xl md:text-7xl font-black leading-tight" style="color: var(--text-primary);">
-        Seja a luz que <span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary-hover)]">guia</span>
+      <h1 class="text-5xl md:text-7xl font-black leading-tight" style="color: var(--text-primary)">
+        Seja a luz que
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary-hover)]"
+          >guia</span
+        >
         e protege.
       </h1>
 
-      <p class="text-xl leading-relaxed font-medium" style="color: var(--text-secondary);">
-        Alehao é um canal de conexão entre a sua coragem e a segurança deles. Transformamos o silêncio em justiça
-        através da tecnologia inspirada.
+      <p class="text-xl leading-relaxed font-medium" style="color: var(--text-secondary)">
+        Alehao é um canal de conexão entre a sua coragem e a segurança deles. Transformamos o
+        silêncio em justiça através da tecnologia inspirada.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 pt-4">
-        <app-button [fullWidth]="true" label="Fazer Denúncia Segura" [routerLink]="['/denuncie-aqui']"></app-button>
-        <app-button [fullWidth]="true" label="Ver Mapa de Proteção" [routerLink]="['/denuncie-aqui']"></app-button>
+        <app-button
+          [fullWidth]="true"
+          label="Fazer Denúncia Segura"
+          [routerLink]="['/denuncie-aqui']"
+        ></app-button>
+        <app-button
+          [fullWidth]="true"
+          label="Ver Mapa de Proteção"
+          [routerLink]="['/denuncie-aqui']"
+        ></app-button>
       </div>
     </div>
 
     <div class="md:w-1/2 relative group">
       <div
-        class="relative bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-secondary)]/10 rounded-[3.5rem] p-3 overflow-hidden border border-gray-300 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 group-hover:shadow-[0_48px_80px_-12px_rgba(0,0,0,0.15)]">
-
-        <div class="relative rounded-[3rem] overflow-hidden" style="background-color: var(--bg-primary);">
-
+        class="relative bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-secondary)]/10 rounded-[3.5rem] p-3 overflow-hidden border border-gray-300 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 group-hover:shadow-[0_48px_80px_-12px_rgba(0,0,0,0.15)]"
+      >
+        <div
+          class="relative rounded-[3rem] overflow-hidden"
+          style="background-color: var(--bg-primary)"
+        >
           <div class="overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=800"
+            <img
+              src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=800"
               alt="Cachorro Feliz"
-              class="w-full object-cover rounded-[3rem] transition-transform duration-[1.5s] cubic-bezier(0.4, 0, 0.2, 1) group-hover:scale-110">
+              class="w-full object-cover rounded-[3rem] transition-transform duration-[1.5s] cubic-bezier(0.4, 0, 0.2, 1) group-hover:scale-110"
+            />
           </div>
 
           <div
             class="absolute bottom-8 left-6 right-6 backdrop-blur-xl border border-white/20 p-4 rounded-[2rem] shadow-2xl hidden md:flex items-center gap-4 animate-float"
-            style="background-color: rgba(var(--bg-primary-rgb), 0.8);">
-
+            style="background-color: rgba(var(--bg-primary-rgb), 0.8)"
+          >
             <div
-              class="flex-shrink-0 bg-gradient-to-tr from-green-400 to-green-600 p-3 rounded-2xl shadow-[0_0_20px_rgba(34,197,94,0.4)]">
+              class="flex-shrink-0 bg-gradient-to-tr from-green-400 to-green-600 p-3 rounded-2xl shadow-[0_0_20px_rgba(34,197,94,0.4)]"
+            >
               <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04customM12 21.75c-3.236-2.025-6-5.515-6-9.143V6.938l6-2.438 6 2.438v5.669c0 3.628-2.764 7.118-6 9.143z" />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.5"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04customM12 21.75c-3.236-2.025-6-5.515-6-9.143V6.938l6-2.438 6 2.438v5.669c0 3.628-2.764 7.118-6 9.143z"
+                />
               </svg>
             </div>
 
             <div class="flex flex-col">
-              <span class="text-[10px] font-bold uppercase tracking-[0.2em] mb-0.5"
-                style="color: var(--text-primary);">
+              <span
+                class="text-[10px] font-bold uppercase tracking-[0.2em] mb-0.5"
+                style="color: var(--text-primary)"
+              >
                 Status Alehao
               </span>
-              <span class="text-sm font-semibold leading-tight" style="color: var(--text-primary);">
+              <span class="text-sm font-semibold leading-tight" style="color: var(--text-primary)">
                 Anjo enviado ao local com sucesso!
               </span>
             </div>
           </div>
-
         </div>
       </div>
     </div>
 
     <style>
       @keyframes float {
-
         0%,
         100% {
           transform: translateY(0);
@@ -112,126 +97,238 @@
       .animate-float {
         animation: float 4s ease-in-out infinite;
       }
-
     </style>
   </section>
 
   <section id="tecnologia" class="py-16 px-8">
     <div class="max-w-7xl mx-auto mb-16 text-center">
-      <h2 class="text-4xl font-black mb-4 tracking-tight" style="color: var(--text-primary);">Ação através da Tecnologia
+      <h2 class="text-4xl font-black mb-4 tracking-tight" style="color: var(--text-primary)">
+        Ação através da Tecnologia
       </h2>
-      <p class="max-w-2xl mx-auto font-bold italic" style="color: var(--text-secondary);">Nossa plataforma é o escudo
-        digital para quem não tem voz.</p>
+      <p class="max-w-2xl mx-auto font-bold italic" style="color: var(--text-secondary)">
+        Nossa plataforma é o escudo digital para quem não tem voz.
+      </p>
     </div>
 
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="p-10 rounded-[2.5rem] shadow-xl transition-all duration-300 hover:translate-y-[-8px]"
-        style="background-color: var(--bg-primary); border-bottom: 8px solid var(--color-primary); box-shadow: 0 30px 60px -20px var(--shadow);">
-        <div class="text-4xl mb-6 w-16 h-16 flex items-center justify-center rounded-2xl font-bold"
-          style="background-color: var(--color-primary); color: var(--color-primary);">📍</div>
-        <h3 class="text-2xl font-black mb-4 tracking-tight" style="color: var(--text-primary);">Presença Real</h3>
-        <p class="leading-relaxed font-medium" style="color: var(--text-secondary);">Mapeamento sagrado em tempo real.
-          Sua localização guia o resgate exatamente onde a vida clama por ajuda.</p>
-      </div>
-
-      <div class="p-10 rounded-[2.5rem] shadow-xl transition-all duration-300 hover:translate-y-[-8px]"
-        style="background-color: var(--bg-primary); border-bottom: 8px solid var(--color-secondary); box-shadow: 0 30px 60px -20px var(--shadow);">
-        <div class="text-4xl mb-6 w-16 h-16 flex items-center justify-center rounded-2xl font-bold"
-          style="background-color: var(--color-secondary); color: var(--color-secondary-hover);">🪽</div>
-        <h3 class="text-2xl font-black mb-4 tracking-tight" style="color: var(--text-primary);">Manto Protetor</h3>
-        <p class="leading-relaxed font-medium" style="color: var(--text-secondary);">Sua identidade permanece no reino
-          do invisível. Denuncie sem medo, envolto pelo anonimato absoluto.</p>
-      </div>
-
-      <div class="p-10 rounded-[2.5rem] shadow-xl transition-all duration-300 hover:translate-y-[-8px]"
-        style="background-color: var(--bg-primary); border-bottom: 8px solid #22c55e; box-shadow: 0 30px 60px -20px var(--shadow);">
+      <div
+        class="p-10 rounded-[2.5rem] shadow-xl transition-all duration-300 hover:translate-y-[-8px]"
+        style="
+          background-color: var(--bg-primary);
+          border-bottom: 8px solid var(--color-primary);
+          box-shadow: 0 30px 60px -20px var(--shadow);
+        "
+      >
         <div
-          class="text-4xl mb-6 bg-green-500/20 text-green-500 w-16 h-16 flex items-center justify-center rounded-2xl font-bold">
-          📈</div>
-        <h3 class="text-2xl font-black mb-4 tracking-tight" style="color: var(--text-primary);">Fluxo de Justiça</h3>
-        <p class="leading-relaxed font-medium" style="color: var(--text-secondary);">Prioridade máxima para casos
-          críticos. Nossa inteligência foca onde a dor é urgente e o tempo é curto.</p>
+          class="text-4xl mb-6 w-16 h-16 flex items-center justify-center rounded-2xl font-bold"
+          style="background-color: var(--color-primary); color: var(--color-primary)"
+        >
+          📍
+        </div>
+        <h3 class="text-2xl font-black mb-4 tracking-tight" style="color: var(--text-primary)">
+          Presença Real
+        </h3>
+        <p class="leading-relaxed font-medium" style="color: var(--text-secondary)">
+          Mapeamento sagrado em tempo real. Sua localização guia o resgate exatamente onde a vida
+          clama por ajuda.
+        </p>
+      </div>
+
+      <div
+        class="p-10 rounded-[2.5rem] shadow-xl transition-all duration-300 hover:translate-y-[-8px]"
+        style="
+          background-color: var(--bg-primary);
+          border-bottom: 8px solid var(--color-secondary);
+          box-shadow: 0 30px 60px -20px var(--shadow);
+        "
+      >
+        <div
+          class="text-4xl mb-6 w-16 h-16 flex items-center justify-center rounded-2xl font-bold"
+          style="background-color: var(--color-secondary); color: var(--color-secondary-hover)"
+        >
+          🪽
+        </div>
+        <h3 class="text-2xl font-black mb-4 tracking-tight" style="color: var(--text-primary)">
+          Manto Protetor
+        </h3>
+        <p class="leading-relaxed font-medium" style="color: var(--text-secondary)">
+          Sua identidade permanece no reino do invisível. Denuncie sem medo, envolto pelo anonimato
+          absoluto.
+        </p>
+      </div>
+
+      <div
+        class="p-10 rounded-[2.5rem] shadow-xl transition-all duration-300 hover:translate-y-[-8px]"
+        style="
+          background-color: var(--bg-primary);
+          border-bottom: 8px solid #22c55e;
+          box-shadow: 0 30px 60px -20px var(--shadow);
+        "
+      >
+        <div
+          class="text-4xl mb-6 bg-green-500/20 text-green-500 w-16 h-16 flex items-center justify-center rounded-2xl font-bold"
+        >
+          📈
+        </div>
+        <h3 class="text-2xl font-black mb-4 tracking-tight" style="color: var(--text-primary)">
+          Fluxo de Justiça
+        </h3>
+        <p class="leading-relaxed font-medium" style="color: var(--text-secondary)">
+          Prioridade máxima para casos críticos. Nossa inteligência foca onde a dor é urgente e o
+          tempo é curto.
+        </p>
       </div>
     </div>
   </section>
 
-  <section class="py-20 px-8 pt-16" style="background-color: var(--bg-secondary);">
+  <section class="py-20 px-8 pt-16" style="background-color: var(--bg-secondary)">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-black mb-4 tracking-tight" style="color: var(--text-primary);">Manifesto Alehao</h2>
-        <h3 class="max-w-2xl mx-auto font-bold italic" style="color: var(--text-secondary);">Nossa Jornada</h3>
+        <h2 class="text-4xl font-black mb-4 tracking-tight" style="color: var(--text-primary)">
+          Manifesto Alehao
+        </h2>
+        <h3 class="max-w-2xl mx-auto font-bold italic" style="color: var(--text-secondary)">
+          Nossa Jornada
+        </h3>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="p-10 rounded-[2.5rem] shadow-xl transition-all duration-300 hover:translate-y-[-8px] flex flex-col"
-          style="background-color: var(--bg-primary); border-bottom: 8px solid var(--color-primary); box-shadow: 0 30px 60px -20px var(--shadow);">
+        <div
+          class="p-10 rounded-[2.5rem] shadow-xl transition-all duration-300 hover:translate-y-[-8px] flex flex-col"
+          style="
+            background-color: var(--bg-primary);
+            border-bottom: 8px solid var(--color-primary);
+            box-shadow: 0 30px 60px -20px var(--shadow);
+          "
+        >
           <div class="aspect-square rounded-[2.5rem] overflow-hidden mb-6 relative shrink-0">
-            <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&q=80&w=800"
-              class="w-full h-full object-cover">
+            <img
+              src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&q=80&w=800"
+              class="w-full h-full object-cover"
+            />
           </div>
           <div class="flex flex-col flex-grow">
-            <h3 class="font-black text-xl mb-3" style="color: var(--text-primary);">O Nascimento do Alehao</h3>
-            <p class="text-sm leading-relaxed mb-8 flex-grow" style="color: var(--text-secondary);">Alehao nasceu de um
-              sonho onde o silêncio dos animais não era ignorado.</p>
-            <div class="flex items-center justify-between border-t pt-5 mt-auto"
-              style="border-color: var(--border-primary);">
-              <span class="font-black text-xs uppercase tracking-widest" style="color: var(--color-primary);">Siga o
-                Alehao</span>
+            <h3 class="font-black text-xl mb-3" style="color: var(--text-primary)">
+              O Nascimento do Alehao
+            </h3>
+            <p class="text-sm leading-relaxed mb-8 flex-grow" style="color: var(--text-secondary)">
+              Alehao nasceu de um sonho onde o silêncio dos animais não era ignorado.
+            </p>
+            <div
+              class="flex items-center justify-between border-t pt-5 mt-auto"
+              style="border-color: var(--border-primary)"
+            >
+              <span
+                class="font-black text-xs uppercase tracking-widest"
+                style="color: var(--color-primary)"
+                >Siga o Alehao</span
+              >
             </div>
           </div>
         </div>
 
-        <div class="p-10 rounded-[2.5rem] shadow-xl transition-all duration-300 hover:translate-y-[-8px] flex flex-col"
-          style="background-color: var(--bg-primary); border-bottom: 8px solid var(--color-secondary); box-shadow: 0 30px 60px -20px var(--shadow);">
+        <div
+          class="p-10 rounded-[2.5rem] shadow-xl transition-all duration-300 hover:translate-y-[-8px] flex flex-col"
+          style="
+            background-color: var(--bg-primary);
+            border-bottom: 8px solid var(--color-secondary);
+            box-shadow: 0 30px 60px -20px var(--shadow);
+          "
+        >
           <div
-            class="aspect-square rounded-[2.5rem] overflow-hidden mb-6 relative shrink-0 flex items-center justify-center">
-            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=800"
-              class="absolute inset-0 w-full h-full object-cover">
-            <p class="relative z-10 text-xl font-black italic text-center leading-tight text-white p-4">"Animais não
-              sabem pedir ajuda."</p>
+            class="aspect-square rounded-[2.5rem] overflow-hidden mb-6 relative shrink-0 flex items-center justify-center"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=800"
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <p
+              class="relative z-10 text-xl font-black italic text-center leading-tight text-white p-4"
+            >
+              "Animais não sabem pedir ajuda."
+            </p>
             <div class="absolute inset-0 bg-black/40"></div>
           </div>
           <div class="flex flex-col flex-grow">
-            <h3 class="font-black text-xl mb-3" style="color: var(--text-primary);">Ponte de Amor</h3>
-            <p class="text-sm leading-relaxed mb-8 flex-grow" style="color: var(--text-secondary);">Eles sentem fome,
-              dor e medo. O Alehao existe para ser a ponte entre quem vê e quem ajuda.</p>
-            <div class="flex items-center justify-between border-t pt-5 mt-auto"
-              style="border-color: var(--border-primary);">
-              <span class="font-black text-xs uppercase tracking-widest"
-                style="color: var(--color-secondary-hover);">Ato de Coragem</span>
+            <h3 class="font-black text-xl mb-3" style="color: var(--text-primary)">
+              Ponte de Amor
+            </h3>
+            <p class="text-sm leading-relaxed mb-8 flex-grow" style="color: var(--text-secondary)">
+              Eles sentem fome, dor e medo. O Alehao existe para ser a ponte entre quem vê e quem
+              ajuda.
+            </p>
+            <div
+              class="flex items-center justify-between border-t pt-5 mt-auto"
+              style="border-color: var(--border-primary)"
+            >
+              <span
+                class="font-black text-xs uppercase tracking-widest"
+                style="color: var(--color-secondary-hover)"
+                >Ato de Coragem</span
+              >
             </div>
           </div>
         </div>
 
-        <div class="p-10 rounded-[2.5rem] shadow-xl transition-all duration-300 hover:translate-y-[-8px] flex flex-col"
-          style="background-color: var(--bg-primary); border-bottom: 8px solid #22c55e; box-shadow: 0 30px 60px -20px var(--shadow);">
+        <div
+          class="p-10 rounded-[2.5rem] shadow-xl transition-all duration-300 hover:translate-y-[-8px] flex flex-col"
+          style="
+            background-color: var(--bg-primary);
+            border-bottom: 8px solid #22c55e;
+            box-shadow: 0 30px 60px -20px var(--shadow);
+          "
+        >
           <div class="aspect-square rounded-[2.5rem] overflow-hidden mb-6 relative shrink-0">
-            <img src="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?auto=format&fit=crop&q=80&w=800"
-              class="w-full h-full object-cover">
+            <img
+              src="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?auto=format&fit=crop&q=80&w=800"
+              class="w-full h-full object-cover"
+            />
             <div class="absolute inset-0 bg-[var(--color-primary)]/10 mix-blend-multiply"></div>
           </div>
           <div class="flex flex-col flex-grow">
-            <h3 class="font-black text-xl mb-3" style="color: var(--text-primary);">Segurança Absoluta</h3>
-            <p class="text-sm leading-relaxed mb-8 flex-grow" style="color: var(--text-secondary);">Denunciar é
-              interromper a dor. No Alehao, sua identidade é sagrada e permanece invisível.</p>
-            <div class="flex items-center justify-between border-t pt-5 mt-auto"
-              style="border-color: var(--border-primary);">
-              <span class="text-green-500 font-black text-xs uppercase tracking-widest">100% Anônimo</span>
+            <h3 class="font-black text-xl mb-3" style="color: var(--text-primary)">
+              Segurança Absoluta
+            </h3>
+            <p class="text-sm leading-relaxed mb-8 flex-grow" style="color: var(--text-secondary)">
+              Denunciar é interromper a dor. No Alehao, sua identidade é sagrada e permanece
+              invisível.
+            </p>
+            <div
+              class="flex items-center justify-between border-t pt-5 mt-auto"
+              style="border-color: var(--border-primary)"
+            >
+              <span class="text-green-500 font-black text-xs uppercase tracking-widest"
+                >100% Anônimo</span
+              >
             </div>
           </div>
         </div>
       </div>
 
       <div
-        class="max-w-7xl mx-auto mt-16 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary-hover)] p-1 rounded-[3rem] shadow-xl">
-        <div class="h-full w-full rounded-[2.8rem] p-8 flex flex-col items-center justify-center text-center"
-          style="background-color: var(--bg-primary);">
-          <div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl mb-6"
-            style="background-color: var(--color-primary);">🤝</div>
-          <h3 class="font-black text-2xl mb-4" style="color: var(--text-primary);">Você pode ser a voz.</h3>
-          <p class="text-sm mb-8" style="color: var(--text-secondary);">Ajudar é ver. Ajudar é denunciar. Ajudar é
-            compartilhar. Não ignore o chamado.</p>
-          <app-button label="Fazer parte da rede" type="primary" [routerLink]="['/autenticar']"></app-button>
+        class="max-w-7xl mx-auto mt-16 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary-hover)] p-1 rounded-[3rem] shadow-xl"
+      >
+        <div
+          class="h-full w-full rounded-[2.8rem] p-8 flex flex-col items-center justify-center text-center"
+          style="background-color: var(--bg-primary)"
+        >
+          <div
+            class="w-20 h-20 rounded-full flex items-center justify-center text-3xl mb-6"
+            style="background-color: var(--color-primary)"
+          >
+            🤝
+          </div>
+          <h3 class="font-black text-2xl mb-4" style="color: var(--text-primary)">
+            Você pode ser a voz.
+          </h3>
+          <p class="text-sm mb-8" style="color: var(--text-secondary)">
+            Ajudar é ver. Ajudar é denunciar. Ajudar é compartilhar. Não ignore o chamado.
+          </p>
+          <app-button
+            label="Fazer parte da rede"
+            type="primary"
+            [routerLink]="['/autenticar']"
+          ></app-button>
         </div>
       </div>
     </div>
@@ -239,39 +336,29 @@
 
   <section id="denuncia" class="px-8 py-16">
     <div
-      class="max-w-6xl mx-auto bg-gradient-to-br from-[var(--color-primary)] via-[#78b1e4] to-[#a2d0f5] rounded-[4rem] p-10 text-center text-white relative overflow-hidden shadow-2xl md:p-20">
+      class="max-w-6xl mx-auto bg-gradient-to-br from-[var(--color-primary)] via-[#78b1e4] to-[#a2d0f5] rounded-[4rem] p-10 text-center text-white relative overflow-hidden shadow-2xl md:p-20"
+    >
       <div class="absolute -top-20 -left-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
       <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-black/10 rounded-full blur-3xl"></div>
 
       <div class="relative z-10">
-        <h2 class="text-3xl md:text-6xl font-black mb-8 italic leading-tight">"Criada por quem escuta o silêncio."</h2>
-        <p class="text-xl mb-12 max-w-2xl mx-auto font-bold">Você foi escolhido para ser a luz hoje. Inicie
-          agora o processo que transformará o destino de um inocente.</p>
+        <h2 class="text-3xl md:text-6xl font-black mb-8 italic leading-tight">
+          "Criada por quem escuta o silêncio."
+        </h2>
+        <p class="text-xl mb-12 max-w-2xl mx-auto font-bold">
+          Você foi escolhido para ser a luz hoje. Inicie agora o processo que transformará o destino
+          de um inocente.
+        </p>
         <div class="flex justify-center">
-          <app-button label="Iniciar missão agora" type="success" [routerLink]="['/denuncie-aqui']"></app-button>
+          <app-button
+            label="Iniciar missão agora"
+            type="success"
+            [routerLink]="['/denuncie-aqui']"
+          ></app-button>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="py-16 px-8 bg-slate-900 text-white rounded-t-[3rem] md:rounded-t-[5rem]">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
-      <div>
-        <div class="flex items-center gap-3 justify-center md:justify-start mb-4">
-          <div class="bg-[var(--color-secondary)] p-2 rounded-xl text-xl transform rotate-12">🐾</div>
-          <span class="text-3xl font-black tracking-tighter">ALEHAO</span>
-        </div>
-      </div>
-      <div class="flex flex-wrap gap-8 justify-center font-black text-sm uppercase tracking-widest text-slate-500">
-        <a href="#" class="hover:text-[var(--color-secondary)] transition">Educação</a>
-        <a href="#" class="hover:text-[var(--color-secondary)] transition">Privacidade</a>
-        <a href="#" class="hover:text-[var(--color-secondary)] transition">Impacto</a>
-      </div>
-      <div class="md:text-right">
-        <p class="text-sm text-slate-500 font-bold mb-2">ALEHAO © 2026</p>
-        <p class="text-[10px] text-slate-600 font-black tracking-widest uppercase italic">Criado para ser a voz dos que
-          não podem falar.</p>
-      </div>
-    </div>
-  </footer>
+  <app-footer></app-footer>
 </div>

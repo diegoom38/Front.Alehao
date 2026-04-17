@@ -1,0 +1,82 @@
+<header class="relative w-full border-b border-[var(--color-primary)]/5">
+  <nav class="flex flex-row justify-between items-center px-8 py-6 max-w-7xl mx-auto relative z-[110]">
+    
+    <div class="flex items-center gap-3">
+      <div
+        class="bg-[var(--color-secondary)] p-2.5 rounded-2xl shadow-lg shadow-[var(--color-secondary)]/20 text-xl flex items-center justify-center transform -rotate-3">
+        <span class="leading-none">🐾</span>
+      </div>
+      <div class="flex flex-col text-left">
+        <span class="text-2xl font-black text-[var(--color-primary)] tracking-tighter leading-none">ALEHAO</span>
+        <span class="text-[10px] font-extrabold text-[var(--color-secondary-hover)] tracking-[0.3em] uppercase">
+          A Voz dos Animais
+        </span>
+      </div>
+    </div>
+
+    <div class="hidden lg:flex gap-8 text-sm font-bold italic text-[var(--text-secondary)]">
+      <a href="#missao" class="hover:text-[var(--color-primary)] transition-colors relative group">
+        Nossa Missão
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--color-secondary)] transition-all group-hover:w-full"></span>
+      </a>
+      <a href="#tecnologia" class="hover:text-[var(--color-primary)] transition-colors relative group">
+        Tecnologia Sagrada
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--color-secondary)] transition-all group-hover:w-full"></span>
+      </a>
+      <a href="#impacto" class="hover:text-[var(--color-primary)] transition-colors relative group">
+        Histórias de Luz
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--color-secondary)] transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/adote" class="hover:text-[var(--color-primary)] transition-colors relative group">
+        Adote
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--color-secondary)] transition-all group-hover:w-full"></span>
+      </a>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <app-dark-mode-toggle></app-dark-mode-toggle>
+      
+      <app-button 
+        class="hidden lg:block"
+        label="Proteger um Inocente" 
+        [routerLink]="['/denuncie-aqui']">
+      </app-button>
+
+      <button 
+        (click)="toggleMenu()"
+        class="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
+        aria-label="Menu">
+        <span class="block w-6 h-0.5 bg-[var(--color-primary)] transition-all duration-300"
+              [class.rotate-45]="isMenuOpen" [class.translate-y-2]="isMenuOpen"></span>
+        <span class="block w-6 h-0.5 bg-[var(--color-primary)] transition-all duration-300"
+              [class.opacity-0]="isMenuOpen"></span>
+        <span class="block w-6 h-0.5 bg-[var(--color-primary)] transition-all duration-300"
+              [class.-rotate-45]="isMenuOpen" [class.-translate-y-2]="isMenuOpen"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div 
+    class="fixed inset-0 bg-[var(--bg-secondary)] z-[100] flex flex-col items-center justify-end max-h-[480px] pb-10 transition-all duration-500 ease-in-out lg:hidden"
+    [class.opacity-0]="!isMenuOpen"
+    [class.pointer-events-none]="!isMenuOpen"
+    [class.translate-x-full]="!isMenuOpen"
+    [class.opacity-100]="isMenuOpen"
+    [class.translate-x-0]="isMenuOpen">
+    
+    <div class="flex flex-col items-center gap-8 font-bold italic text-xl">
+      <a href="#missao" (click)="toggleMenu()" class="hover:text-[var(--color-primary)] transition-colors text-[var(--text-secondary)]">Nossa Missão</a>
+      <a href="#tecnologia" (click)="toggleMenu()" class="hover:text-[var(--color-primary)] transition-colors text-[var(--text-secondary)]">Tecnologia Sagrada</a>
+      <a href="#impacto" (click)="toggleMenu()" class="hover:text-[var(--color-primary)] transition-colors text-[var(--text-secondary)]">Histórias de Luz</a>
+      <a href="/adote" (click)="toggleMenu()" class="hover:text-[var(--color-primary)] transition-colors text-[var(--text-secondary)]">Adote</a>
+      
+      <div class="mt-4">
+        <app-button 
+          label="Proteger um Inocente" 
+          (click)="toggleMenu()" 
+          [routerLink]="['/denuncie-aqui']">
+        </app-button>
+      </div>
+    </div>
+  </div>
+</header>
