@@ -21,6 +21,7 @@ export class Tag {
   @Input() icon?: string;
   @Input() ariaLabel?: string;
   @Input() clickable = false;
+  @Input() fullWidth = false;
 
   @HostBinding('attr.role') get role() {
     return this.clickable ? 'button' : 'status';
@@ -51,6 +52,9 @@ export class Tag {
       ? 'cursor-pointer hover:brightness-95 active:scale-95'
       : '';
 
-    return `${base} ${variants[this.variant]} ${clickable}`;
+    const fullWidth = this.fullWidth ? 'w-full justify-center'
+      : '';
+
+    return `${base} ${variants[this.variant]} ${clickable} ${fullWidth}`;
   }
 }

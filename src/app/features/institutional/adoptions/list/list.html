@@ -21,16 +21,16 @@
 
     @for (adocao of [].constructor(8); track $index) {
 
-    <app-base-card type="button" class="group transition hover:shadow-md cursor-pointer">
+    <app-base-card type="button" class="group transition hover:shadow-md cursor-pointer" [routerLink]="['../detalhes/1']">
 
       <!-- TOP -->
-      <div class="flex justify-between items-center mb-4">
+      <div class="flex justify-between items-center mb-4 flex-wrap gap-2">
 
         <span class="text-[10px] font-bold tracking-wider uppercase" [style.color]="'var(--text-muted)'">
           #PET-2026-{{$index}}
         </span>
 
-        <app-tag label="Em análise" color="amber"></app-tag>
+        <app-tag class="sm:w-auto w-full" label="Em análise" color="amber" [fullWidth]="true"></app-tag>
       </div>
 
       <!-- PET -->
@@ -75,7 +75,7 @@
       </div>
 
       <!-- FOOTER -->
-      <div class="mt-5 flex justify-between items-center">
+      <div class="mt-5 flex justify-between items-center flex-wrap gap-1">
 
         <span class="text-[11px] font-medium" [style.color]="'var(--text-muted)'">
           Aguardando entrevista

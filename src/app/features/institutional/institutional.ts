@@ -42,9 +42,14 @@ export class Institutional {
       iconName: 'folder_open', // Ícone de pasta aberta
     },
     {
-      label: 'Suas adoções',
+      label: 'Adoções',
       route: 'suas-adocoes',
       iconName: 'favorite', // Ícone de favorito
+    },
+    {
+      label: 'Eventos',
+      route: 'eventos',
+      iconName: 'event', // Ícone de evento
     },
   ]);
 

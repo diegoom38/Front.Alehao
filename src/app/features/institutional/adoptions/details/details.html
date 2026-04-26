@@ -87,12 +87,10 @@
       </div>
 
       <aside class="flex flex-col gap-4">
-        <app-base-card class="bg-[var(--bg-tertiary)] border-[var(--border-primary)]">
-          <p class="text-sm mb-1 text-[var(--text-secondary)]">Situação do Processo</p>
-
+        <app-base-card header="Situação do Processo">
           <p class="text-xl font-bold text-[var(--text-primary)]">Pronto para Adoção</p>
 
-          <div class="mt-4 pt-4 border-t border-[var(--border-primary)]">
+          <div class="mt-2 pt-2">
             <div class="flex justify-between text-xs text-[var(--text-secondary)]">
               <span>Saúde</span>
               <span>100%</span>
@@ -104,11 +102,7 @@
           </div>
         </app-base-card>
 
-        <app-base-card>
-          <p class="text-xs uppercase tracking-wide mb-3 text-[var(--text-muted)]">
-            Informações Base
-          </p>
-
+        <app-base-card header="Informações Básicas">
           <div class="space-y-3">
             <div>
               <p class="text-[10px] text-[var(--text-muted)]">Espécie / Raça</p>
@@ -122,9 +116,7 @@
           </div>
         </app-base-card>
 
-        <app-base-card>
-          <p class="text-xs uppercase mb-3 text-[var(--text-muted)]">Gestão</p>
-
+        <app-base-card header="Gestão do Processo">
           <app-button label="Marcar como Adotado" [fullWidth]="true" type="success"></app-button>
         </app-base-card>
       </aside>

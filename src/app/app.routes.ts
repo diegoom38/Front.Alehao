@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { ReportComponent } from './features/report/components/report-component/report-component';
-import { DashboardComponent } from './features/institutional/dashboard/dashboard';
 import { LandingPage } from './features/landing-page/landing-page';
 import { Auth } from './features/auth/auth';
 import { Adopt } from './features/adopt/adopt';
+import { Events } from './features/events/events';
 
 export const routes: Routes = [
   {
@@ -15,6 +15,11 @@ export const routes: Routes = [
     title: 'Adote com Alehao',
     path: 'adote',
     loadComponent: () => Adopt,
+  },
+  {
+    title: 'Eventos',
+    path: 'eventos',
+    loadComponent: () => Events,
   },
   {
     title: 'Autenticar',

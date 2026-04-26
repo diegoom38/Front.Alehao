@@ -4,9 +4,9 @@
   <div class="max-w-8xl mx-auto pb-4 flex items-center justify-between">
 
     <div>
-      <h1 class="text-2xl font-bold" [style.color]="'var(--text-primary)'">
+      <h2 class="text-xl font-bold" [style.color]="'var(--text-primary)'">
         João Silva
-      </h1>
+      </h2>
       <p class="text-sm" [style.color]="'var(--text-secondary)'">
         Detalhes do operador
       </p>
@@ -19,31 +19,19 @@
 <!-- CONTENT -->
 <main class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
   <!-- INFOS -->
-  <div class="grid gap-4">
+  <div class="flex flex-col gap-4">
 
-    <app-base-card>
-      <h3 class="text-xs uppercase tracking-wide mb-2" [style.color]="'var(--text-muted)'">
-        Status
-      </h3>
-
+    <app-base-card header="Status">
       <app-tag label="Ativo"></app-tag>
     </app-base-card>
 
-    <app-base-card>
-      <h3 class="text-xs uppercase tracking-wide mb-2" [style.color]="'var(--text-muted)'">
-        Email
-      </h3>
-
+    <app-base-card header="Email">
       <p class="text-sm" [style.color]="'var(--text-primary)'">
         joao@email.com
       </p>
     </app-base-card>
 
-    <app-base-card>
-      <h3 class="text-xs uppercase tracking-wide mb-2" [style.color]="'var(--text-muted)'">
-        Casos ativos
-      </h3>
-
+    <app-base-card header="Casos ativos">
       <p class="text-2xl font-bold" [style.color]="'var(--text-primary)'">
         12
       </p>
@@ -54,7 +42,6 @@
   <!-- CASOS -->
   <div class="lg:col-span-2">
     <app-base-card>
-
       <h3 class="text-lg font-semibold mb-4" [style.color]="'var(--text-primary)'">
         Casos atribuídos
       </h3>
@@ -64,24 +51,24 @@
         <!-- Caso -->
         <app-base-card class="flex justify-between items-center w-full hover:shadow-md transition">
 
-          <div>
+          <div class="grid gap-2">
             <p class="font-medium" [style.color]="'var(--text-primary)'">
               #AHL-2031
             </p>
 
             <p class="text-sm" [style.color]="'var(--text-secondary)'">
-              Maus-tratos
+              Maus-tratos a animal doméstico
             </p>
+            <app-tag label="Em andamento"></app-tag>
           </div>
 
 
-          <app-tag label="Em andamento"></app-tag>
         </app-base-card>
 
         <!-- Caso -->
         <app-base-card class="flex justify-between items-center w-full hover:shadow-md transition">
 
-          <div>
+          <div class="grid gap-2">
             <p class="font-medium" [style.color]="'var(--text-primary)'">
               #AHL-2025
             </p>
@@ -89,14 +76,10 @@
             <p class="text-sm" [style.color]="'var(--text-secondary)'">
               Abandono
             </p>
+            <app-tag label="Abandono"></app-tag>
           </div>
-
-
-          <app-tag label="Abandono"></app-tag>
         </app-base-card>
-
       </div>
     </app-base-card>
   </div>
-
 </main>

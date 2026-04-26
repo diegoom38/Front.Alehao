@@ -104,42 +104,24 @@
       <aside class="flex flex-col gap-4">
 
         <!-- STATUS -->
-        <app-base-card>
-          <p class="text-xs uppercase tracking-wide mb-2" [style.color]="'var(--text-muted)'">
-            Status
-          </p>
-
-
+        <app-base-card header="Status">
           <app-tag label="Em análise"></app-tag>
         </app-base-card>
 
         <!-- PRIORIDADE -->
-        <app-base-card>
-          <p class="text-xs uppercase tracking-wide mb-2" [style.color]="'var(--text-muted)'">
-            Prioridade
-          </p>
-
-
+        <app-base-card header="Prioridade">
           <app-tag label="Média"></app-tag>
         </app-base-card>
 
         <!-- DENUNCIANTE -->
-        <app-base-card>
-          <p class="text-xs uppercase tracking-wide mb-2" [style.color]="'var(--text-muted)'">
-            Denunciante
-          </p>
-
+        <app-base-card header="Denunciante">
           <p class="text-sm" [style.color]="'var(--text-primary)'">
             Anônimo
           </p>
         </app-base-card>
 
         <!-- LOCAL -->
-        <app-base-card>
-          <p class="text-xs uppercase tracking-wide mb-2" [style.color]="'var(--text-muted)'">
-            Localização
-          </p>
-
+        <app-base-card header="Localização">
           <p class="text-sm mb-3" [style.color]="'var(--text-secondary)'">
             São Paulo - SP
           </p>
@@ -151,11 +133,7 @@
         </app-base-card>
 
         <!-- AÇÕES -->
-        <app-base-card>
-          <p class="text-xs uppercase tracking-wide mb-3" [style.color]="'var(--text-muted)'">
-            Ações
-          </p>
-
+        <app-base-card header="Ações">
           <div class="grid gap-2">
             <app-button label="Marcar como concluído" [fullWidth]="true" (click)="concluirCaso()"></app-button>
             <app-button label="Alterar prioridade" [fullWidth]="true" type="success"></app-button>

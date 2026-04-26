@@ -1,37 +1,25 @@
 <!-- KPIs -->
 <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
 
-  <app-base-card>
-    <p class="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
-      Casos em Aberto
-    </p>
+  <app-base-card header="Casos em Aberto">
     <h3 class="text-3xl font-black text-[var(--text-primary)]">
       {{ totalOpen() }}
     </h3>
   </app-base-card>
 
-  <app-base-card>
-    <p class="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
-      Prioridade Crítica
-    </p>
+  <app-base-card header="Prioridade Crítica">
     <h3 class="text-3xl font-black text-red-500">
       {{ criticalToday() }}
     </h3>
   </app-base-card>
 
-  <app-base-card>
-    <p class="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
-      Aguardando Ação
-    </p>
+  <app-base-card header="Aguardando Ação">
     <h3 class="text-3xl font-black text-[var(--text-primary)]">
       12
     </h3>
   </app-base-card>
 
-  <app-base-card>
-    <p class="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
-      Vidas Salvas
-    </p>
+  <app-base-card header="Vidas Salvas">
     <h3 class="text-3xl font-black text-green-500">
       {{ resolvedCount() }}
     </h3>

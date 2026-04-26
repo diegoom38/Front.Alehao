@@ -1,13 +1,10 @@
-<div
-  class="rounded-2xl border transition w-full h-full"
-  [ngClass]="{
+<div class="rounded-2xl border transition w-full h-full" [ngClass]="{
     'hover:shadow-md cursor-pointer': hover,
-    'p-6': padding
-  }"
-  [class]="borderColor"
-  [style.background-color]="'var(--bg-secondary)'"
-  [style.border-color]="borderColor ? null : 'var(--border-primary)'"
-  [style.box-shadow]="'0 1px 2px var(--shadow)'"
->
+    'p-4': padding
+  }" [class]="borderColor" [style.background-color]="'var(--bg-secondary)'"
+  [style.border-color]="borderColor ? null : 'var(--border-primary)'" [style.box-shadow]="'0 1px 2px var(--shadow)'">
+  @if(header) {
+  <app-base-card-header [title]="header"></app-base-card-header>
+  }
   <ng-content></ng-content>
 </div>

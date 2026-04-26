@@ -1,0 +1,231 @@
+<app-header></app-header>
+
+<div class="max-w-7xl mx-auto px-6 py-10">
+
+  <!-- LISTAGEM -->
+  @if (!selectedEvent()) {
+
+  <!-- HEADER -->
+  <div class="text-center mb-12">
+    <h1 class="text-4xl md:text-5xl font-extrabold
+      bg-gradient-to-r from-white to-[var(--color-primary)]
+      bg-clip-text text-transparent">
+      Eventos & Ações
+    </h1>
+
+    <p class="text-[var(--text-secondary)] mt-3">
+      Acompanhe feiras de adoção, campanhas e ações de proteção animal 🐾
+    </p>
+  </div>
+
+  <!-- FILTROS -->
+  <div class="flex flex-wrap justify-center gap-2 mb-10 p-2 rounded-2xl
+    border border-[var(--border-primary)]
+    bg-[var(--bg-secondary)] w-fit mx-auto">
+
+    @for (category of categories(); track category) {
+
+    <button
+      (click)="setFilter(category)"
+      class="px-4 py-2 rounded-xl text-sm font-semibold transition"
+      [class.bg-[var(--color-primary)]]="currentFilter() === category"
+      [class.text-white]="currentFilter() === category"
+      [class.shadow]="currentFilter() === category"
+      [class.text-[var(--text-secondary)]]="currentFilter() !== category"
+      [class.hover:bg-[var(--bg-tertiary)]]="currentFilter() !== category">
+
+      {{ category }}
+
+    </button>
+
+    }
+
+  </div>
+
+  <!-- GRID BLOG -->
+  <div class="min-h-[480px]">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+      @for (event of filteredEvents(); track event.id) {
+
+      <div
+        (click)="openEvent(event)"
+        class="group rounded-2xl overflow-hidden
+        border border-[var(--border-primary)]
+        bg-[var(--bg-secondary)]
+        cursor-pointer transition
+        hover:-translate-y-2 hover:shadow-xl">
+
+        <!-- IMG -->
+        <div class="relative h-64 overflow-hidden">
+          <img
+            [src]="event.image"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+
+          <span
+            class="absolute top-4 left-4 px-3 py-1 rounded-lg text-xs font-bold
+            bg-[var(--color-primary)] text-white">
+
+            {{ event.category }}
+
+          </span>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="p-6">
+
+          <p class="text-sm text-[var(--text-secondary)] mb-2">
+            {{ event.date }} • {{ event.location }}
+          </p>
+
+          <h2 class="text-xl font-bold text-[var(--text-primary)] mb-3">
+            {{ event.title }}
+          </h2>
+
+          <p class="text-sm text-[var(--text-secondary)] leading-relaxed line-clamp-3">
+            {{ event.summary }}
+          </p>
+
+          <div class="mt-5 font-semibold text-[var(--color-primary)]">
+            Ler mais →
+          </div>
+
+        </div>
+      </div>
+
+      }
+
+    </div>
+  </div>
+
+  }
+
+  <!-- DETALHE BLOG -->
+  @else {
+
+  <button
+    (click)="closeEvent()"
+    class="mb-6 text-sm
+    text-[var(--text-secondary)]
+    hover:text-[var(--text-primary)] transition">
+
+    ← Voltar para eventos
+
+  </button>
+
+  <div class="max-w-5xl mx-auto">
+
+    <!-- HERO -->
+    <img
+      [src]="selectedEvent()?.image"
+      class="w-full h-[320px] lg:h-[500px]
+      object-cover rounded-2xl
+      border border-[var(--border-primary)]
+      shadow-lg mb-8" />
+
+    <!-- META -->
+    <div class="mb-6">
+
+      <p class="text-sm text-[var(--color-primary)] font-semibold mb-2">
+        {{ selectedEvent()?.category }}
+      </p>
+
+      <h1 class="text-4xl md:text-5xl font-bold
+        text-[var(--text-primary)] mb-4 leading-tight">
+
+        {{ selectedEvent()?.title }}
+
+      </h1>
+
+      <div class="flex flex-wrap gap-4 text-sm text-[var(--text-secondary)]">
+        <span>📅 {{ selectedEvent()?.date }}</span>
+        <span>📍 {{ selectedEvent()?.location }}</span>
+        <span>👥 {{ selectedEvent()?.organizer }}</span>
+      </div>
+
+    </div>
+
+    <!-- ARTICLE -->
+    <div class="grid lg:grid-cols-[2fr_1fr] gap-10">
+
+      <!-- TEXTO -->
+      <article class="space-y-6">
+
+        <p class="text-lg text-[var(--text-secondary)] leading-relaxed">
+          {{ selectedEvent()?.summary }}
+        </p>
+
+        <div
+          class="bg-[var(--bg-secondary)]
+          border border-[var(--border-primary)]
+          rounded-2xl p-6">
+
+          <h3 class="text-xl font-bold mb-4 text-[var(--text-primary)]">
+            Sobre o evento
+          </h3>
+
+          <p class="text-[var(--text-secondary)] leading-relaxed">
+            {{ selectedEvent()?.content }}
+          </p>
+        </div>
+
+        <div
+          class="bg-[var(--bg-secondary)]
+          border border-[var(--border-primary)]
+          rounded-2xl p-6">
+
+          <h3 class="text-xl font-bold mb-4 text-[var(--text-primary)]">
+            Programação
+          </h3>
+
+          <ul class="space-y-2 text-[var(--text-secondary)]">
+            <li>• Feira de adoção responsável</li>
+            <li>• Orientação veterinária gratuita</li>
+            <li>• Campanha de arrecadação de ração</li>
+            <li>• Palestras sobre proteção animal</li>
+          </ul>
+        </div>
+
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="space-y-6">
+
+        <div
+          class="bg-[var(--bg-secondary)]
+          border border-[var(--border-primary)]
+          rounded-2xl p-6">
+
+          <h3 class="font-bold text-lg mb-4 text-[var(--text-primary)]">
+            Informações rápidas
+          </h3>
+
+          <div class="space-y-3 text-sm text-[var(--text-secondary)]">
+            <p><strong>Horário:</strong> 09:00 às 18:00</p>
+            <p><strong>Entrada:</strong> Gratuita</p>
+            <p><strong>Pet Friendly:</strong> Sim</p>
+            <p><strong>Doações:</strong> Aceitas no local</p>
+          </div>
+
+        </div>
+
+        <button
+          class="w-full py-3 rounded-xl font-bold text-white
+          bg-[var(--color-primary)]
+          hover:bg-[var(--color-primary-hover)]
+          transition">
+
+          Participar do evento
+
+        </button>
+
+      </aside>
+
+    </div>
+  </div>
+
+  }
+
+</div>
+
+<app-footer></app-footer>

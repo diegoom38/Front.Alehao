@@ -30,6 +30,11 @@ export const routes: Routes = [
         title: 'Suas Adoções',
         loadChildren: () => import('./adoptions/adoptions.routes').then((m) => m.routes),
       },
+       {
+        path: 'eventos',
+        title: 'Seus eventos',
+        loadChildren: () => import('./events/events.routes').then((m) => m.routes),
+      },
     ],
   },
 ];
