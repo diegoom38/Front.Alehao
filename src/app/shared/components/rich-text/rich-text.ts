@@ -88,7 +88,6 @@ import { CommonModule } from '@angular/common';
                [&_ul]:list-disc [&_ul]:ml-6 [&_ol]:list-decimal [&_ol]:ml-6 
                [&_a]:text-blue-600 [&_a]:underline [&_p]:mb-2 [&_p:last-child]:mb-0">
       </div>
-
     </div>
   `,
   providers: [
@@ -112,23 +111,23 @@ export class RichText implements ControlValueAccessor {
   constructor(private renderer: Renderer2) {}
 
   // ControlValueAccessor
-  writeValue(value: string): void {
+  public writeValue(value: string): void {
     const content = value || '<p><br></p>';
     this.renderer.setProperty(this.editor.nativeElement, 'innerHTML', content);
   }
 
-  registerOnChange(fn: any): void { this.onChange = fn; }
-  registerOnTouched(fn: any): void { this.onTouched = fn; }
+  public registerOnChange(fn: any): void { this.onChange = fn; }
+  public registerOnTouched(fn: any): void { this.onTouched = fn; }
 
   // Comandos
-  exec(command: string) {
+  public exec(command: string): void {
     document.execCommand(command, false);
     this.editor.nativeElement.focus();
     this.onInput();
   }
 
   // Lógica do Link
-  toggleLinkPanel() {
+  public toggleLinkPanel(): void {
     if (!this.isLinkPanelVisible) {
       this.savedSelection = this.saveSelection();
       this.isLinkPanelVisible = true;
@@ -138,7 +137,7 @@ export class RichText implements ControlValueAccessor {
     }
   }
 
-  insertLink(url: string) {
+  public insertLink(url: string): void {
     if (url && this.savedSelection) {
       this.restoreSelection(this.savedSelection);
       const fullUrl = url.startsWith('http') ? url : `https://${url}`;
@@ -148,7 +147,7 @@ export class RichText implements ControlValueAccessor {
     this.closeLinkPanel();
   }
 
-  private closeLinkPanel() {
+  private closeLinkPanel(): void {
     this.isLinkPanelVisible = false;
     this.savedSelection = null;
     this.editor.nativeElement.focus();
@@ -159,7 +158,7 @@ export class RichText implements ControlValueAccessor {
     return sel && sel.rangeCount > 0 ? sel.getRangeAt(0) : null;
   }
 
-  private restoreSelection(range: Range) {
+  private restoreSelection(range: Range): void {
     const sel = window.getSelection();
     if (sel) {
       sel.removeAllRanges();
@@ -167,12 +166,12 @@ export class RichText implements ControlValueAccessor {
     }
   }
 
-  onInput() {
+  public onInput(): void {
     this.onChange(this.editor.nativeElement.innerHTML);
   }
 
   @HostListener('document:mousedown', ['$event'])
-  onClickOutside(event: MouseEvent) {
+  public onClickOutside(event: MouseEvent): void {
     const clickedInside = (event.target as HTMLElement).closest('app-rich-text');
     if (!clickedInside && this.isLinkPanelVisible) {
       this.closeLinkPanel();
